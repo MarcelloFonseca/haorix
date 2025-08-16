@@ -3,7 +3,6 @@
           import "./globals.css";
           import { ThemeProvider } from "./theme-provider";
           import { ReactElement } from 'react';
-
           import {
             NavigationMenu,
             NavigationMenuContent,
@@ -14,6 +13,9 @@
             NavigationMenuTrigger,
             NavigationMenuViewport,
           } from "@/components/ui/navigation-menu";
+          
+          import { Footer } from "./Regular-Components/footer";
+
 
           const geistSans = Geist({
             variable: "--font-geist-sans",
@@ -77,7 +79,7 @@
             return (
               <html lang="fr" suppressHydrationWarning>
                 <body
-                  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                  className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
                 >
                 <ThemeProvider
                 //Component pour le light/dark theme
@@ -87,9 +89,10 @@
                       disableTransitionOnChange
                     >
                 <NavigationBar /> 
-                <main>
+                <main className="flex-grow border-solid border-5 border-yellow-500">
                   {children}
                   </main>
+                  <Footer className="border-solid border-4 border-indigo-500" /> 
                   </ThemeProvider>
                 </body>
               </html>
