@@ -1,18 +1,22 @@
-        import { ReactElement } from "react";
-        import { useTheme } from "next-themes";
-        import { DarkModeIcon } from "@/icons/darkMode";
+'use client';
 
-        function SetThemeButton(): ReactElement {
-        const { theme, setTheme } = useTheme();
+import { ReactElement, useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
+import { DarkModeIcon } from '@/icons/darkMode';
+import { LightModeIcon } from '@/icons/lightMode';
 
-        const toggleTheme = () => {
-            setTheme(theme === "dark" ? "light" : "dark");
-        }
+export function SetThemeButton(): ReactElement | null {
+  const { resolvedTheme, setTheme } = useTheme(); 
+  const [mounted, setMounted] = useState(false);
 
-        return (   
-        <DarkModeIcon onClick={toggleTheme} className="cursor-pointer border-solid border-2 border-red-400"/>
-        );}
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null; 
 
-        export {
-            SetThemeButton
-        }
+  const toggleTheme = () => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+
+  return resolvedTheme === 'dark' ? (
+    <LightModeIcon onClick={toggleTheme} className="sm:cursor-pointer" size="lg" />
+  ) : (
+    <DarkModeIcon onClick={toggleTheme} className="sm:cursor-pointer" size="lg" />
+  );
+}

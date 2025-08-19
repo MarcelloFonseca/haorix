@@ -43,16 +43,17 @@ export const metadata: Metadata = {
 //TODO: Réparer le footer (elements sans triggers)-> élément TEST
 //TODO: Faire responsiveness du footer
 //TODO: Faire responsiveness du mobile (page #1)
-//TODO: Ajouter bouton dark/light mode nav
-//TODO: Rendre le header sticky
-//TODO: Ajouter le font de la brand
-
-//TODO: Ajouter le state du dark mode ici (root)
+//TODO: Ajouter le font principal et secondaire de la brand
+//TODO: Trouver la bonne combinaison pour le darkmode Theme
+//TODO: Faire le dark/light mode du bouton du theme (soleil vs lune + couleurs)
 
 //IMPORTANT: Les premières className sont pour mobileFirst approach
 export function NavigationBar(): ReactElement {
   return (
-    <header className="sticky top-0 z-50 flex w-full items-center px-3 sm:px-4 sm:p-3 sm:sticky sm:top-0 sm:bg-white sm:z-50 sm:backdrop-blur sm:supports-[backdrop-filter]:bg-white/70">
+    <header
+      className="sticky top-0 z-50 flex w-full items-center px-3 sm:px-4 sm:p-3 sm:sticky sm:top-0 sm:bg-white sm:z-50 sm:backdrop-blur 
+    sm:supports-[backdrop-filter]:bg-white/70 sm:dark:bg-[#121212]"
+    >
       <div className="relative h-10 w-36 sm:h-10 sm:w-32 sm:inline">
         <Image
           src="/HaorixLogo.png"
@@ -76,7 +77,7 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh flex flex-col bg-white 
-        overflow-y-auto dark:bg-neutral-900 dark:text-neutral-100`}
+        overflow-y-auto dark:bg-[#121212] dark:text-neutral-100`}
       >
         <ThemeProvider
           attribute="class"
@@ -88,7 +89,7 @@ export default function RootLayout({
           <main className="flex-grow border-[5px] border-yellow-500">
             {children}
           </main>
-          <Footer className=" border-4 border-indigo-500" />
+          <Footer className="sm:border-4 sm:border-indigo-500" />
         </ThemeProvider>
       </body>
     </html>
