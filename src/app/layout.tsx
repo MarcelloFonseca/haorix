@@ -3,17 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./theme-provider";
 import { ReactElement } from "react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { Footer } from "./Regular-Components/footer";
 import Image from "next/image";
-import { HamburgerMenu } from "./Regular-Components/Hamburger-menu";
 import { NavBar } from "./Regular-Components/Navbar";
 
 const geistSans = Geist({
@@ -56,6 +47,8 @@ export const metadata: Metadata = {
 //TODO: Rendre le header sticky
 //TODO: Ajouter le font de la brand
 
+//TODO: Ajouter le state du dark mode ici (root)
+
 //IMPORTANT: Les premières className sont pour mobileFirst approach
 export function NavigationBar(): ReactElement {
   return (
@@ -82,11 +75,12 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh flex flex-col bg-white overflow-y-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-dvh flex flex-col bg-white 
+        overflow-y-auto dark:bg-neutral-900 dark:text-neutral-100`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

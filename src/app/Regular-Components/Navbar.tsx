@@ -11,9 +11,11 @@
     NavigationMenuTrigger,
     } from "@/components/ui/navigation-menu";
     import { HamburgerMenu } from "./Hamburger-menu";
+    import { SetThemeButton } from "./setTheme";
 
     export function NavBar(): ReactElement {
     const [open, setOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false); //TODO: Complete implementation
 
     //TODO:Enlever middlebar de animation hamburger menu
 
@@ -61,9 +63,14 @@
             </NavigationMenuList>
         </NavigationMenu>
 
-        <button className="bg-black hidden sm:inline sm:w-[100px] text-white">
+        <div className="hidden sm:flex sm:items-center sm:h-auto sm:border-solid sm:border-2 sm:border-red-300 space-x-1.5">
+            <button className="bg-black hidden sm:inline sm:w-[100px] text-white">
             Test
-        </button>
+            </button>
+            {/* Le bouton component vient ici */}
+            <SetThemeButton />
+
+        </div>
 
         <div className="w-full flex flex-row-reverse relative sm:hidden">
             <div className="ml-auto relative">
@@ -87,7 +94,7 @@
                 : "opacity-0 scale-95 pointer-events-none",
             ].join(" ")}
             >
-                //TODO: Mapper,Transformer en Links components+styles 
+            //TODO: Mapper,Transformer en Links components+styles
             <nav className="p-3 space-y-2">
                 <button className="w-full text-left py-2"></button>
                 <button className="w-full text-left py-2">Item Two</button>
