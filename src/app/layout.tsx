@@ -45,7 +45,6 @@ export const metadata: Metadata = {
 //TODO: Faire responsiveness du mobile (page #1)
 //TODO: Ajouter le font principal et secondaire de la brand
 //TODO: Trouver la bonne combinaison pour le darkmode Theme
-//TODO: Faire le dark/light mode du bouton du theme (soleil vs lune + couleurs)
 
 //IMPORTANT: Les premières className sont pour mobileFirst approach
 export function NavigationBar(): ReactElement {
@@ -55,12 +54,21 @@ export function NavigationBar(): ReactElement {
     sm:supports-[backdrop-filter]:bg-white/70 sm:dark:bg-[#121212]"
     >
       <div className="relative h-10 w-36 sm:h-10 sm:w-32 sm:inline">
+        {/* Logo pour le light mode */}
         <Image
-          src="/HaorixLogo.png"
+          src="/HaorixLogo.png" 
           width={150}
           height={100}
           alt="Logo Haorix"
-          className="w-36 h-auto sm:w-32 sm:h-auto md:w-40 md:h-auto sm:pr-4"
+          className="w-36 h-auto dark:hidden inline sm:w-32 sm:h-auto md:w-40 md:h-auto sm:pr-4 sm:dark:hidden"
+        />
+        {/* Logo pour le dark mode */}
+        <Image
+          src="/HaorixLogoDark.png"
+          width={150}
+          height={100}
+          alt="Logo Haorix"
+          className="w-32 h-auto dark:inline hidden sm:w-32 sm:h-auto md:w-40 md:h-auto sm:pr-4 sm:hidden sm:dark:inline"
         />
       </div>
       <NavBar />

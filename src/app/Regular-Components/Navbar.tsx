@@ -64,7 +64,7 @@ export function NavBar(): ReactElement {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="hidden sm:flex sm:items-center sm:h-auto sm:border-solid sm:border-2 sm:border-red-300 space-x-1.5">
+      <div className="hidden sm:flex sm:items-center sm:h-auto sm:border-solid sm:border-2 sm:border-red-300 space-x-2.5">
         <button className="bg-black hidden sm:inline sm:w-[100px] text-white">
           Test
         </button>

@@ -1,9 +1,11 @@
-import { ReactElement } from "react";
-import Link from "next/link";
+'use client';
+
+import { ReactElement } from 'react';
+import Link from 'next/link';
+import Image from 'next/image'; 
 
 export function Footer({ className }: { className: string }): ReactElement {
   interface FooterElements {
-    //Les éléments sont optionels=>pour plus de flexibilité
     elementName?: string;
     url?: string;
     image?: string;
@@ -11,39 +13,43 @@ export function Footer({ className }: { className: string }): ReactElement {
 
   const footerElements: FooterElements[] = [
     {
-      url: "#",
-      image: "/HaorixLogo.png",
+      url: '#',
+      image: '/HaorixLogo.png',
     },
-    {
-      elementName: "Div 1",
-      url: "#",
-    },
-    {
-      elementName: "Div 1",
-      url: "#",
-    },
-    {
-      elementName: "Div 3",
-      url: "#",
-    },
+    { elementName: 'Div 1', url: '#' },
+    { elementName: 'Div 2', url: '#' },
+    { elementName: 'Div 3', url: '#' },
   ];
 
   return (
     <footer className={className}>
-      <div className="border-solid border-4 border-red-500 size-full grid grid-cols-3 gap-4">
-        {footerElements.map((element, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {footerElements.map((element: FooterElements, index) => (
           <Link
             key={index}
-            href={"#"}
+            href={element.url ?? '#'}
             className="text-muted-foreground hover:text-primary block duration-150"
           >
             {element.elementName}
             {element.image && (
-              <img
-                src={element.image}
-                alt={element.elementName}
-                className="w-[100px] h-auto"
-              />
+              <>
+                {/* Logo light mode */}
+                <Image
+                  src="/HaorixLogo.png"
+                  alt="Haorix Logo Light"
+                  width={100}
+                  height={40}
+                  className="inline-block dark:hidden w-[100px] h-auto"
+                />
+                {/* Logo dark mode */}
+                <Image
+                  src="/HaorixLogoDark.png"
+                  alt="Haorix Logo Dark"
+                  width={100}
+                  height={40}
+                  className="hidden dark:inline-block w-[100px] h-auto"
+                />
+              </>
             )}
           </Link>
         ))}
