@@ -12,63 +12,67 @@ import {
 } from "@/components/ui/navigation-menu";
 import { HamburgerMenu } from "./Hamburger-menu";
 import { SetThemeButton } from "./setTheme";
+import { montserrat } from "@/Fonts/Montserrat";
+import { michroma } from "@/Fonts/Michroma";
 
 export function NavBar(): ReactElement {
   const [open, setOpen] = useState(false); //State pour hamburger menu!
+
 
   //TODO:Enlever middlebar de animation hamburger menu
 
   return (
     <>
-      <NavigationMenu viewport={false} className="w-full hidden sm:flex">
-        <NavigationMenuList className="w-full flex flex-row items-center">
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="rounded-xs">
+      <NavigationMenu viewport={false} className="sm:w-full hidden sm:flex sm:ml-2.5">
+        <NavigationMenuList className="hidden sm:w-full sm:flex sm:flex-row sm:items-center sm:space-x-4">
+
+          <NavigationMenuItem className={`${michroma.className}`}>
+            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer">
               Item One
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink>Link One</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} sm:cursor-pointer`}>Link One</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="rounded-xs">
+          <NavigationMenuItem className={`${michroma.className}`}>
+            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer">
               Item Two
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink>Link Two</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} sm:cursor-pointer`}>Link Two</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="rounded-xs">
-              Item Three
+          <NavigationMenuItem className={`${michroma.className}`}>
+            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer">
+              Item Three 
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink>Link three</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} sm:cursor-pointer`}>Link three</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="rounded-xs">
+          <NavigationMenuItem className={`${michroma.className}`}>
+            <NavigationMenuTrigger className="rounded-xs sm:cursor-pointer">
               Item Four
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink>Link Four</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} sm:cursor-pointer`}>Link Four</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuLink className="sm:bg-inherit sm:dark:bg-black sm:dark:text-white">
-            TEST
+          <NavigationMenuLink className={`${michroma.className} sm:bg-inherit sm:dark:bg-background sm:dark:text-primary sm:cursor-pointer`}>
+            Test
           </NavigationMenuLink>
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="hidden sm:flex sm:items-center sm:h-auto sm:border-solid sm:border-2 sm:border-red-300 space-x-2.5">
-        <button className="bg-black hidden sm:inline sm:w-[100px] text-white">
+      <div className="hidden sm:flex sm:items-center sm:h-auto space-x-2.5">
+        <button className={`${michroma.className} bg-black text-[#E0E0E0] hidden border-1 border-accent sm:inline sm:w-[100px] sm:cursor-pointer hover:bg-accent 
+        hover:text-black`}>
           Test
         </button>
-
         <SetThemeButton />
       </div>
 
@@ -96,10 +100,10 @@ export function NavBar(): ReactElement {
         >
           {/*TODO: Mapper,Transformer en Links components+styles*/}
           <nav className="p-3 space-y-2">
-            <button className="w-full text-left py-2"></button>
-            <button className="w-full text-left py-2">Item Two</button>
-            <button className="w-full text-left py-2">Item Three</button>
-            <button className="w-full text-left py-2">Item Four</button>
+            <button className={`${michroma.className} w-full text-left py-2`}>Item One</button>
+            <button className={`${michroma.className} w-full text-left py-2`}>Item Two</button>
+            <button className={`${michroma.className} w-full text-left py-2`}>Item Three</button>
+            <button className={`${michroma.className} w-full text-left py-2`}>Item Four</button>
             <a className="inline-block bg-amber-500 px-4 py-2 rounded" href="#">
               CTA
             </a>

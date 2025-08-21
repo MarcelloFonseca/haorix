@@ -3,6 +3,7 @@
 import { ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image'; 
+import { michroma } from "@/Fonts/Michroma";
 
 export function Footer({ className }: { className: string }): ReactElement {
   interface FooterElements {
@@ -13,8 +14,8 @@ export function Footer({ className }: { className: string }): ReactElement {
 
   const footerElements: FooterElements[] = [
     {
-      url: '#',
       image: '/HaorixLogo.png',
+      url: '/',
     },
     { elementName: 'Div 1', url: '#' },
     { elementName: 'Div 2', url: '#' },
@@ -28,7 +29,7 @@ export function Footer({ className }: { className: string }): ReactElement {
           <Link
             key={index}
             href={element.url ?? '#'}
-            className="text-muted-foreground hover:text-primary block duration-150"
+            className={`${michroma.className} text-muted-foreground hover:text-primary block duration-150`}
           >
             {element.elementName}
             {element.image && (
@@ -39,7 +40,7 @@ export function Footer({ className }: { className: string }): ReactElement {
                   alt="Haorix Logo Light"
                   width={100}
                   height={40}
-                  className="inline-block dark:hidden w-[100px] h-auto"
+                  className="inline-block dark:hidden w-[100px] h-auto "
                 />
                 {/* Logo dark mode */}
                 <Image
