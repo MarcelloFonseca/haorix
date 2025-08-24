@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes';
 import { DarkModeIcon } from '@/icons/darkMode';
 import { LightModeIcon } from '@/icons/lightMode';
 
-export function SetThemeButton(): ReactElement | null {
+function SetThemeButton(): ReactElement | null {
   const { resolvedTheme, setTheme } = useTheme(); 
   const [mounted, setMounted] = useState(false);
 
@@ -19,4 +19,8 @@ export function SetThemeButton(): ReactElement | null {
   ) : (
     <DarkModeIcon onClick={toggleTheme} className="sm:cursor-pointer" size="lg" />
   );
+}
+
+export {
+  SetThemeButton
 }

@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 
 type HamburgerMenuProps = {
@@ -8,8 +9,8 @@ type HamburgerMenuProps = {
   controlsId?: string;
 };
 
-export function HamburgerMenu({
-  className = "",
+function HamburgerMenu({
+  className,
   isOpen,
   onClick,
   controlsId = "mobile-nav",
@@ -30,20 +31,20 @@ export function HamburgerMenu({
     >
       <span
         className={[
-          "relative block h-[2px] w-7 bg-current transition-all duration-200",
-          isOpen && "bg-transpa not-last:irent",
+          "relative block h-[2px] w-7 bg-current transition-all duration-200 dark:bg-foreground",
+          isOpen && "bg-transparent dark:bg-transparent not-last:inherit",
         ].join(" ")}
       >
         <span
           className={[
-            "absolute left-0 top-0 block h-[2px] w-7 bg-current",
+            "absolute left-0 top-0 block h-[2px] w-7 bg-current dark:bg-foreground",
             "transition-transform duration-200",
-            isOpen ? "translate-y-0 rotate-45" : "-translate-y-2",
+            isOpen ? "translate-y-0 rotate-45 " : "-translate-y-2",
           ].join(" ")}
         />
         <span
           className={[
-            "absolute left-0 top-0 block h-[2px] w-7 bg-current",
+            "absolute left-0 top-0 block h-[2px] w-7 bg-current dark:bg-foreground",
             "transition-transform duration-200",
             isOpen ? "translate-y-0 -rotate-45" : "translate-y-2",
           ].join(" ")}
@@ -51,4 +52,8 @@ export function HamburgerMenu({
       </span>
     </button>
   );
+}
+
+export {
+  HamburgerMenu
 }

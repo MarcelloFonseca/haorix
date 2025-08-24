@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image'; 
 import { michroma } from "@/Fonts/Michroma";
 
-export function Footer({ className }: { className: string }): ReactElement {
+function Footer({ className }: { className: string }): ReactElement {
   interface FooterElements {
     elementName?: string;
     url?: string;
@@ -57,4 +57,8 @@ export function Footer({ className }: { className: string }): ReactElement {
       </div>
     </footer>
   );
+}
+
+export {
+  Footer
 }
