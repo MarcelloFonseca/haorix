@@ -35,8 +35,7 @@ export const metadata: Metadata = {
 function NavigationBar(): ReactElement {
   return (
     <header
-      className="sticky top-0 z-50 flex w-full items-center px-3 sm:px-5 bg-background backdrop-blur 
-    sm:supports-[backdrop-filter]:bg-white/70 sm:border-b-2 sm:border-b-border sm:dark:bg-background sm:dark:border-b-2 dark:border-b-border min-h-20"
+      className="sticky top-0 z-50 flex w-full items-center px-3 sm:px-5 min-h-20 bg-background/95 dark:bg-secondary/95 backdrop-blur-3xl supports-[backdrop-filter]:bg-background/80 dark:supports-[backdrop-filter]:bg-secondary/80 border-b border-border/30 sm:border-b-2 shadow-lg"
     >
       <div className="relative h-10 w-36 sm:inline">
         {/* Logo pour le light mode */}

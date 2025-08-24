@@ -24,7 +24,7 @@ function Footer({ className }: { className: string }): ReactElement {
 
   return (
     <footer className={className}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 pt-3.5 sm:pt-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {footerElements.map((element: FooterElements, index) => (
           <Link
             key={index}

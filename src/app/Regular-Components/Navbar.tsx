@@ -44,10 +44,10 @@ function NavBar(): ReactElement {
   return (
     <>
       <NavigationMenu viewport={false} className="hidden sm:w-full sm:flex sm:ml-2.5">
-        <NavigationMenuList className="hidden sm:w-full sm:flex sm:flex-row sm:items-center sm:space-x-4">
+        <NavigationMenuList className="hidden sm:w-full sm:flex sm:flex-row sm:items-center sm:space-x-6">
 
           <NavigationMenuItem className={`${michroma.className}`}>
-            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer">
+            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer dark:bg-secondary/80">
               Item One
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -56,7 +56,7 @@ function NavBar(): ReactElement {
           </NavigationMenuItem>
 
           <NavigationMenuItem className={`${michroma.className}`}>
-            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer">
+            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer dark:bg-secondary/80">
               Item Two
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -65,7 +65,7 @@ function NavBar(): ReactElement {
           </NavigationMenuItem>
 
           <NavigationMenuItem className={`${michroma.className}`}>
-            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer">
+            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer dark:bg-secondary/80">
               Item Three 
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -74,7 +74,7 @@ function NavBar(): ReactElement {
           </NavigationMenuItem>
 
           <NavigationMenuItem className={`${michroma.className}`}>
-            <NavigationMenuTrigger className="rounded-xs sm:cursor-pointer">
+            <NavigationMenuTrigger className="rounded-xs sm:cursor-pointer dark:bg-secondary/80">
               Item Four
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -82,7 +82,7 @@ function NavBar(): ReactElement {
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuLink className={`${michroma.className} sm:bg-inherit sm:dark:bg-background sm:dark:text-primary sm:cursor-pointer`}>
+          <NavigationMenuLink className={`${michroma.className} sm:bg-inherit sm:dark:dark:bg-secondary/80 sm:dark:text-primary sm:cursor-pointer`}>
             Test
           </NavigationMenuLink>
         </NavigationMenuList>
@@ -111,23 +111,26 @@ function NavBar(): ReactElement {
           aria-hidden={!open}
           className={[
             "absolute right-0 top-full z-50 mt-2",
-            "w-[min(20rem,70vw)] rounded-md bg-background shadow-lg dark:bg-secondary",
+            "w-[min(20rem,70vw)] rounded-md",
+            "bg-background/95 dark:bg-secondary/95",      
+            "backdrop-blur-3xl border border-border/30",   
+            "shadow-lg",
             "origin-top-right transition-all duration-200",
             open
               ? "opacity-100 scale-100 pointer-events-auto"
               : "opacity-0 scale-95 pointer-events-none",
           ].join(" ")}
         > 
-          <nav className="p-3 space-y-2">
+          <nav className="p-3 space-y-2 ">
 
             {navLinks.map((link):ReactElement => {
               return (
-                <Link key={link.label} href={link.href} className={`${michroma.className} w-full text-left py-2 block`}>
+                <Link key={link.label} href={link.href} className={`${michroma.className} w-full text-center py-2 block`}>
                   {link.label}
                 </Link>
               );
             })}
-            <a className="inline-block bg-amber-500 px-4 py-2 rounded" href="#">
+            <a className="inline-block w-full text-background bg-accent-foreground px-4 py-2 rounded text-center" href="#">
               CTA
             </a>
           </nav>
