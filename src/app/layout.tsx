@@ -7,11 +7,6 @@ import Image from "next/image";
 import { NavBar } from "./Regular-Components/Navbar";
 import Link from 'next/link'
 
-//TODO: Réparer le footer (elements sans triggers)-> élément TEST
-//TODO: Vérifier que les variables css sont respectées
-//TODO: Vérifier mobile vers sm (car de mobile ça s'applique au reste, donc voir l'application)
-//TODO: Ajouter les dernières fonctionnalités en commentaire dans les files
-
 export const metadata: Metadata = {
   title: "Haorix | Accueil",
   description: "Placer la description ici pour le SEO...", //TODO: Ajouter une description
