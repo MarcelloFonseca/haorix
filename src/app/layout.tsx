@@ -1,93 +1,88 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { ThemeProvider } from "./theme-provider";
-import { ReactElement } from "react";
-import { Footer } from "./Regular-Components/footer";
-import Image from "next/image";
-import { NavBar } from "./Regular-Components/Navbar";
-import Link from 'next/link'
+      import type { Metadata } from "next";
+      import "./globals.css";
+      import { ThemeProvider } from "./theme-provider";
+      import { ReactElement } from "react";
+      import { Footer } from "./Regular-Components/footer";
+      import Image from "next/image";
+      import { NavBar } from "./Regular-Components/Navbar";
+      import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: "Haorix | Accueil",
-  description: "Placer la description ici pour le SEO...", //TODO: Ajouter une description
-  applicationName: "Haorix",
-  viewport: { width: "device-width", initialScale: 1 },
+      //FAIT:(Tablette)
 
-  authors: [
-    {
-      name: "HAORIX.Inc",
-      url: "https://haorix123.com", //TODO: Ajouter une URL valide
-    },
-  ],
+      export const metadata: Metadata = {
+        title: "Haorix | Accueil",
+        description: "Placer la description ici pour le SEO...", //TODO: Ajouter une description
+        applicationName: "Haorix",
+        viewport: { width: "device-width", initialScale: 1 },
 
-  openGraph: {
-    type: "website",
-    url: "https://haorix123.com", //TODO: Ajouter une URL valide
-    title: "Haorix | Accueil",
-    description: "Placer la description ici pour le SEO...", //TODO: Ajouter une description
-    siteName: "Haorix",
-    images: [{ url: "https://haorix123.com/og.png" }], //TODO: Ajouter une image
-  },
-};
+        authors: [
+          {
+            name: "HAORIX.Inc",
+            url: "https://haorix123.com", //TODO: Ajouter une URL valide
+          },
+        ],
 
+        openGraph: {
+          type: "website",
+          url: "https://haorix123.com", //TODO: Ajouter une URL valide
+          title: "Haorix | Accueil",
+          description: "Placer la description ici pour le SEO...", //TODO: Ajouter une description
+          siteName: "Haorix",
+          images: [{ url: "https://haorix123.com/og.png" }], //TODO: Ajouter une image
+        },
+      };
 
-//IMPORTANT: Les premières className sont pour mobileFirst approach
-function NavigationBar(): ReactElement {
-  return (
-    <header
-      className="sticky top-0 z-50 flex w-full items-center px-3 sm:px-5 min-h-20 bg-background/95 dark:bg-secondary/95 backdrop-blur-3xl supports-[backdrop-filter]:bg-background/80 dark:supports-[backdrop-filter]:bg-secondary/80 border-b border-border/30 sm:border-b-2 shadow-lg"
-    >
-      <div className="relative h-10 w-36 sm:inline">
-        {/* Logo pour le light mode */}
-        <Link href="/">
-        <Image
-          src="/HaorixLogo.png" 
-          width={150}
-          height={100}
-          alt="Logo Haorix"
-          className="w-36 h-auto dark:hidden inline md:w-40 md:h-auto sm:pr-4"
-        /> 
-        </Link>
-        {/* Logo pour le dark mode */}
-        <Link href="/">
-        <Image
-          src="/HaorixLogoDark.png"
-          width={150}
-          height={100}
-          alt="Logo Haorix"
-          className="w-36 h-auto dark:inline hidden md:w-40 md:h-auto sm:pr-4"
-        />
-        </Link>
-      </div>
-      <NavBar />
-    </header>
-  );
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="fr" suppressHydrationWarning>
-      <body
-        className="antialiased min-h-dvh flex flex-col dark:text-primary"
+      //IMPORTANT: Les premières className sont pour mobileFirst approach
+      function NavigationBar(): ReactElement {
+    return (
+      <header
+        className="sticky top-0 z-50 flex w-full items-center
+                  px-3 md:px-4 lg:px-6
+                  min-h-20
+                  bg-background/90 dark:bg-secondary/90
+                  backdrop-blur md:backdrop-blur-xl lg:backdrop-blur-3xl
+                  supports-[backdrop-filter]:bg-background/80 dark:supports-[backdrop-filter]:bg-secondary/80
+                  border-b border-border/30 lg:border-b-2
+                  shadow-lg"
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NavigationBar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer className="h-auto border-t-1 border-t-border dark:border-t-1 dark:border-t-border sm:min-h-20
-          sm:px-4 sm:p-3" />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
-}
+        <div className="shrink-0 h-10 w-36">
+          <Link href="/" aria-label="Retour à l’accueil">
+            <Image
+              src="/HaorixLogo.png"
+              width={150}
+              height={100}
+              alt="Logo Haorix clair"
+              className="w-36 h-auto dark:hidden md:w-40 lg:pr-4"
+            />
+            <Image
+              src="/HaorixLogoDark.png"
+              width={150}
+              height={100}
+              alt="Logo Haorix sombre"
+              className="hidden dark:inline w-36 h-auto md:w-40 lg:pr-4"
+            />
+          </Link>
+        </div>
+        <NavBar />
+      </header>
+    );
+  }
+
+  export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return (
+      <html lang="fr" suppressHydrationWarning>
+        <body className="antialiased min-h-dvh flex flex-col bg-background text-foreground dark:bg-secondary dark:text-primary">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NavigationBar />
+            <main className="flex-grow">{children}</main>
+            <Footer className="h-auto border-t border-border dark:border-border lg:min-h-20 lg:px-4 lg:p-3" />
+          </ThemeProvider>
+        </body>
+      </html>
+    );
+  }

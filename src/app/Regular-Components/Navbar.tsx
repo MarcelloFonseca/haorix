@@ -1,8 +1,9 @@
-'use client'
+'use client';
 
 import * as React from "react";
-import { ReactElement } from "react";
+import Link from "next/link";
 import { useState } from "react";
+import { ReactElement } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,96 +16,98 @@ import { HamburgerMenu } from "./Hamburger-menu";
 import { SetThemeButton } from "./setTheme";
 import { montserrat } from "@/Fonts/Montserrat";
 import { michroma } from "@/Fonts/Michroma";
-import Link from 'next/link'
 
-type NavItems = {
-  href: string;
-  label: string;
-}
+//FAIT!(Tablette)
 
-const navLinks:NavItems[] = [{
-  href: "#",
-  label: "Label-1"
-}, {
-  href: "#",
-  label: "Label-2"
-}, {
-  href: "#",
-  label: "Label-3"
-},
-{
-  href: "#",
-  label: "Label-4"
-}
-]
+type NavItems = { href: string; label: string };
+
+const navLinks: NavItems[] = [
+  { href: "#", label: "Label-1" },
+  { href: "#", label: "Label-2" },
+  { href: "#", label: "Label-3" },
+  { href: "#", label: "Label-4" },
+];
 
 function NavBar(): ReactElement {
-  const [open, setOpen] = useState(false); //State pour hamburger menu
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <NavigationMenu viewport={false} className="hidden sm:w-full sm:flex sm:ml-2.5">
-        <NavigationMenuList className="hidden sm:w-full sm:flex sm:flex-row sm:items-center sm:space-x-6">
-
-          <NavigationMenuItem className={`${michroma.className}`}>
-            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer dark:bg-secondary/80">
+      <NavigationMenu viewport={false} className="hidden lg:flex lg:w-full lg:ml-2.5">
+        <NavigationMenuList className="flex w-full flex-row items-center space-x-6">
+          <NavigationMenuItem className={michroma.className}>
+            <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
               Item One
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} sm:cursor-pointer`}>Link One</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
+                Link One
+              </NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className={`${michroma.className}`}>
-            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer dark:bg-secondary/80">
+          <NavigationMenuItem className={michroma.className}>
+            <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
               Item Two
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} sm:cursor-pointer`}>Link Two</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
+                Link Two
+              </NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className={`${michroma.className}`}>
-            <NavigationMenuTrigger className="sm:rounded-xs sm:cursor-pointer dark:bg-secondary/80">
-              Item Three 
+          <NavigationMenuItem className={michroma.className}>
+            <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
+              Item Three
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} sm:cursor-pointer`}>Link three</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
+                Link three
+              </NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className={`${michroma.className}`}>
-            <NavigationMenuTrigger className="rounded-xs sm:cursor-pointer dark:bg-secondary/80">
+          <NavigationMenuItem className={michroma.className}>
+            <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
               Item Four
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} sm:cursor-pointer`}>Link Four</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
+                Link Four
+              </NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuLink className={`${michroma.className} sm:bg-inherit sm:dark:dark:bg-secondary/80 sm:dark:text-primary sm:cursor-pointer`}>
+          <NavigationMenuLink
+            className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}
+          >
             Test
           </NavigationMenuLink>
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="hidden sm:flex sm:items-center sm:h-auto space-x-6">
-        <button className={`${michroma.className} hidden sm:bg-background sm:border-1 sm:border-accent-foreground sm:inline sm:w-[100px] sm:cursor-pointer sm:hover:bg-accent 
-        sm:hover:text-foreground`}>
+      {/* Desktop action + theme toggle (≥ lg) */}
+      <div className="hidden lg:flex items-center h-auto space-x-6">
+        <button
+          className={`${michroma.className} inline w-[100px] p-1 cursor-pointer
+                      text-background dark:text-background
+                      bg-accent-foreground dark:bg-accent-foreground
+                      border border-accent-foreground dark:border-accent-foreground
+                      hover:bg-background hover:text-foreground`}
+        >
           Test
         </button>
         <SetThemeButton />
       </div>
 
-      <div className="w-full flex flex-row-reverse relative sm:hidden">
-        <div className="ml-auto relative">
-          <HamburgerMenu
-            isOpen={open}
-            onClick={() => setOpen((o) => !o)}
-            controlsId="mobile-nav"
-            className=""
-          />
-        </div>
+      <div className="relative ml-auto lg:hidden">
+        <HamburgerMenu
+          isOpen={open}
+          onClick={() => setOpen((o) => !o)}
+          controlsId="mobile-nav"
+          className=""
+        />
 
         <div
           id="mobile-nav"
@@ -112,25 +115,28 @@ function NavBar(): ReactElement {
           className={[
             "absolute right-0 top-full z-50 mt-2",
             "w-[min(20rem,70vw)] rounded-md",
-            "bg-background/95 dark:bg-secondary/95",      
-            "backdrop-blur-3xl border border-border/30",   
-            "shadow-lg",
+            "bg-background/95 dark:bg-secondary/95",
+            "backdrop-blur-3xl border border-border/30 shadow-lg",
             "origin-top-right transition-all duration-200",
             open
               ? "opacity-100 scale-100 pointer-events-auto"
               : "opacity-0 scale-95 pointer-events-none",
           ].join(" ")}
-        > 
-          <nav className="p-3 space-y-2 ">
-
-            {navLinks.map((link):ReactElement => {
-              return (
-                <Link key={link.label} href={link.href} className={`${michroma.className} w-full text-center py-2 block`}>
-                  {link.label}
-                </Link>
-              );
-            })}
-            <a className="inline-block w-full text-background bg-accent-foreground px-4 py-2 rounded text-center" href="#">
+        >
+          <nav className="p-3 space-y-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`${michroma.className} block w-full py-2 text-center`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <a
+              className="inline-block w-full rounded bg-accent-foreground px-4 py-2 text-center text-background"
+              href="#"
+            >
               CTA
             </a>
           </nav>
@@ -140,6 +146,4 @@ function NavBar(): ReactElement {
   );
 }
 
-export {
-  NavBar
-}
+export { NavBar };

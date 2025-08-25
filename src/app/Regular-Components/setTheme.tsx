@@ -15,9 +15,9 @@ function SetThemeButton(): ReactElement | null {
   const toggleTheme = () => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
   return resolvedTheme === 'dark' ? (
-    <LightModeIcon onClick={toggleTheme} className="sm:cursor-pointer" size="lg" />
+    <LightModeIcon onClick={toggleTheme} className="lg:cursor-pointer" size="lg" />
   ) : (
-    <DarkModeIcon onClick={toggleTheme} className="sm:cursor-pointer" size="lg" />
+    <DarkModeIcon onClick={toggleTheme} className="lg:cursor-pointer" size="lg" />
   );
 }
 
