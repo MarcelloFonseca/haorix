@@ -79,7 +79,7 @@
             disableTransitionOnChange
           >
             <NavigationBar />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow min-h-dvh">{children}</main>
             <Footer className="h-auto border-t border-border dark:border-border lg:min-h-20 lg:px-4 lg:p-3" />
           </ThemeProvider>
         </body>
