@@ -8,7 +8,7 @@
       import Link from 'next/link'
 
       //FAIT:(Tablette)
-
+      //TODO: Résoudre le probème pour lorsque le breakpoint est un peu plus gros que md (entre md et lg)
       export const metadata: Metadata = {
         title: "Haorix | Accueil",
         description: "Placer la description ici pour le SEO...", //TODO: Ajouter une description
