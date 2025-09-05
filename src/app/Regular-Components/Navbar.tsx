@@ -40,7 +40,7 @@ function NavBar(): ReactElement {
               Item One
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`} href="/TestRoute"> {/*TODO: IMPORTANT DE CONTINUER */}
                 Link One
               </NavigationMenuLink>
             </NavigationMenuContent>

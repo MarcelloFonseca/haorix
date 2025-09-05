@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+
+  transpilePackages: ['three'],
+
   /* config options here */
   webpack(config) {
     // Grab the existing rule that handles SVG imports
