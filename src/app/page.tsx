@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { ReactElement } from "react";
 import { michroma } from "@/Fonts/Michroma";
 import { montserrat } from "@/Fonts/Montserrat";
+import { HDash } from "./Regular-Components/H-Dash-Model";
+import { ModelLayout } from "./Regular-Components/Model-Layout";
 
 function Home(): ReactElement {
   return ( 
@@ -22,14 +23,9 @@ function Home(): ReactElement {
 
         <div className="border-2 border-orange-400 ">
           <div className="relative aspect-[16/10] w-full overflow-hidden">
-            <Image
-              src="/Image-Random.jpg"
-              alt="Description of image"
-              fill
-              className="object-cover"
-              sizes="(min-width:1024px) 50vw, 100vw"
-              priority
-            />
+            <ModelLayout>
+              <HDash />
+            </ModelLayout>
           </div>
         </div>
       </div>

@@ -15,3 +15,5 @@ Ne pas oublier d'intégrer les mesures de performance comme avec Three js pour �
 - **Étape 5**: Tester à chaque ajout de code
 
 - **Étape 6**: Considérer le SEO pour ce canva/section en particulier 
+
+# **IMPORTANT**: Poussé le code dans React-3-Fiber, mais non merge!!
