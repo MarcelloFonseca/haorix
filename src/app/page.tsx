@@ -5,8 +5,17 @@ import { michroma } from "@/Fonts/Michroma";
 import { montserrat } from "@/Fonts/Montserrat";
 import { HDash } from "./Regular-Components/H-Dash-Model";
 import { ModelLayout } from "./Regular-Components/Model-Layout";
+import { EffectComposer, Outline, Selection, Select } from '@react-three/postprocessing'
+import { useState } from "react";
 
 function Home(): ReactElement {
+
+  const [selected, setSelected] = useState<boolean | null>(false);
+
+  function handleSelect() {
+    setSelected(!selected);
+  }
+
   return ( 
     <section className="bg-[var(--backgroundV2)] dark:bg-popover flex w-full justify-center border-2 border-white min-h-[60svh]">
       <div className="flex-1 grid grid-cols-1 gap-6 lg:grid-cols-2 border-2 border-blue-500 pt-7">
@@ -23,8 +32,13 @@ function Home(): ReactElement {
 
         <div className="border-2 border-orange-400 ">
           <div className="relative aspect-[16/10] w-full overflow-hidden">
-            <ModelLayout>
-              <HDash />
+            <ModelLayout onClick={()=> handleSelect()}>
+                <EffectComposer autoClear={false}>
+                  <Outline edgeStrength={selected ? 1 : 0} height={300} visibleEdgeColor={0xffffff}/>
+                </EffectComposer>
+                <Select enabled>
+                  <HDash onClick={()=> handleSelect()} />
+                </Select>
             </ModelLayout>
           </div>
         </div>
@@ -33,4 +47,4 @@ function Home(): ReactElement {
   );
 }
 
-export default Home;
+export default Home; 
