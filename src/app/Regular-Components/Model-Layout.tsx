@@ -2,25 +2,35 @@
 
 import { ReactElement } from "react";
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Center, Bounds } from '@react-three/drei'
+import { Center, Bounds, PresentationControls } from '@react-three/drei'
 import { Selection } from '@react-three/postprocessing'
+import { Html } from "@react-three/drei";
 
-function ModelLayout( {children, onClick}: {children: React.ReactNode, onClick: ()=>void}): ReactElement {
+//TODO: Ajouter les outlines au hover (ce n'est toujours pas fait)
+
+//TODO: Faire le responsive du canvas (ce n'est toujours pas fait)
+
+function ModelLayout( {children}: {children: React.ReactNode}): ReactElement {
 
     return (
-        <>
-        <Canvas frameloop='demand' onClick={onClick}>
+        <div className="border-2 border-red-500 lg:w-full lg:h-full">
+        <Canvas camera={{ position: [0.6, 0.3, 2], fov: 50 }}>
+            {/*<axesHelper args={[5]} />*/}
         <Selection>
         <Bounds fit clip observe margin={1}>
-        <Center>
+        <Center>  
+        <PresentationControls enabled={true} global={false} snap={true} cursor={true}
+        polar={[-0.14, 0.14]} azimuth={[-0.28, 0.28]} speed={1}
+        zoom={2} rotation={[-0.25, 0.35, 0]} >
         {children}
+        </PresentationControls>
         </Center>
         </Bounds>
+        <ambientLight intensity={0.5} />
         <directionalLight position={[3, 5, 2]} color="white" />
-        <OrbitControls minDistance={0.2} maxDistance={1} />
         </Selection>
         </Canvas>
-        </>
+        </div>
     )
 }
 
