@@ -1,23 +1,42 @@
-import { ReactElement } from "react";
-import { useLoader } from '@react-three/fiber'
-import { GLTFLoader } from 'three/examples/jsm/Addons.js'
-import { Html } from "@react-three/drei";
+'use client'
+import { ReactElement, useState } from 'react'
+import { useGLTF, Html } from '@react-three/drei'
+import { Select } from '@react-three/postprocessing'
+import { michroma } from '@/Fonts/Michroma'
 
-//TODO: Compléter le Html div de la librairie drei
+//TODO:À corriger, car ça a été fait vite, mais le tout marche parfaitement
+//TODO: À corriger le bug du card "Manipulez!" à cause de l'effet hover
 
 function HDash(): ReactElement {
-    const gltf = useLoader(GLTFLoader, '/H-Dash-Off-optimized.gltf')
-    return (
-        <>
-        <Html scale={0.05} position={[0, 0.1, 0]} transform>
-                <div className="annotation">
-                    6.550 $ <span style={{ fontSize: '1.5em' }}>🥲</span>
-                </div>
-            </Html>
-            <primitive object={gltf.scene} />
-            
-        </>
-    )
+  const { scene } = useGLTF('/H-Dash-Off-optimized.gltf')
+  const [hovered, setHovered] = useState(false)
+
+  return (
+    <>
+      <Html
+        transform
+        center
+        scale={0.04}
+        position={[-0.6, 0.45, 0]}
+        distanceFactor={1}
+        zIndexRange={[10, 0]}
+      >
+        <div className={`${michroma.className} bg-[var(--foreground)] text-[var(--background)] w-25 p-2 rounded-xl text-xs`}>
+          Manipulez!
+        </div>
+      </Html>
+
+      <Select enabled={hovered}>
+        <group
+          onPointerOver={() => setHovered(true)}
+          onPointerOut={() => setHovered(false)}
+        >
+          <primitive object={scene} />
+        </group>
+      </Select>
+    </>
+  )
 }
 
-export { HDash };
+useGLTF.preload('/H-Dash-Off-optimized.gltf')
+export { HDash }
