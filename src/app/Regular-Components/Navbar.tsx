@@ -1,9 +1,9 @@
 'use client';
 
-import * as React from "react";
-import Link from "next/link";
-import { useState } from "react";
-import { ReactElement } from "react";
+import * as React from 'react';
+import Link from 'next/link';
+import { useState } from 'react';
+import { ReactElement } from 'react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,21 +11,21 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { HamburgerMenu } from "./Hamburger-menu";
-import { SetThemeButton } from "./setTheme";
-import { montserrat } from "@/Fonts/Montserrat";
-import { michroma } from "@/Fonts/Michroma";
+} from '@/components/ui/navigation-menu';
+import { HamburgerMenu } from './Hamburger-menu';
+import { SetThemeButton } from './setTheme';
+import { montserrat } from '@/Fonts/Montserrat';
+import { michroma } from '@/Fonts/Michroma';
 
 //FAIT!(Tablette)
 
 type NavItems = { href: string; label: string };
 
 const navLinks: NavItems[] = [
-  { href: "#", label: "Label-1" },
-  { href: "#", label: "Label-2" },
-  { href: "#", label: "Label-3" },
-  { href: "#", label: "Label-4" },
+  { href: '#', label: 'Label-1' },
+  { href: '#', label: 'Label-2' },
+  { href: '#', label: 'Label-3' },
+  { href: '#', label: 'Label-4' },
 ];
 
 function NavBar(): ReactElement {
@@ -40,9 +40,7 @@ function NavBar(): ReactElement {
               Item One
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
-                Link One
-              </NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Link One</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
@@ -51,9 +49,7 @@ function NavBar(): ReactElement {
               Item Two
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
-                Link Two
-              </NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Link Two</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
@@ -62,9 +58,7 @@ function NavBar(): ReactElement {
               Item Three
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
-                Link three
-              </NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Link three</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
@@ -73,15 +67,12 @@ function NavBar(): ReactElement {
               Item Four
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
-                Link Four
-              </NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Link Four</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
           <NavigationMenuLink
-            className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}
-          >
+            className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
             Test
           </NavigationMenuLink>
         </NavigationMenuList>
@@ -94,49 +85,35 @@ function NavBar(): ReactElement {
                       text-background dark:text-background
                       bg-accent-foreground dark:bg-accent-foreground
                       border border-accent-foreground dark:border-accent-foreground
-                      hover:bg-background hover:text-foreground`}
-        >
+                      hover:bg-background hover:text-foreground`}>
           Test
         </button>
         <SetThemeButton />
       </div>
 
       <div className="relative ml-auto lg:hidden">
-        <HamburgerMenu
-          isOpen={open}
-          onClick={() => setOpen((o) => !o)}
-          controlsId="mobile-nav"
-          className=""
-        />
+        <HamburgerMenu isOpen={open} onClick={() => setOpen((o) => !o)} controlsId="mobile-nav" className="" />
 
         <div
           id="mobile-nav"
           aria-hidden={!open}
           className={[
-            "absolute right-0 top-full z-50 mt-2",
-            "w-[min(20rem,70vw)] rounded-md",
-            "bg-background/95 dark:bg-secondary/95",
-            "backdrop-blur-3xl border border-border/30 shadow-lg",
-            "origin-top-right transition-all duration-200",
-            open
-              ? "opacity-100 scale-100 pointer-events-auto"
-              : "opacity-0 scale-95 pointer-events-none",
-          ].join(" ")}
-        >
+            'absolute right-0 top-full z-50 mt-2',
+            'w-[min(20rem,70vw)] rounded-md',
+            'bg-background/95 dark:bg-secondary/95',
+            'backdrop-blur-3xl border border-border/30 shadow-lg',
+            'origin-top-right transition-all duration-200',
+            open ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none',
+          ].join(' ')}>
           <nav className="p-3 space-y-2">
             {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className={`${michroma.className} block w-full py-2 text-center`}
-              >
+              <Link key={link.label} href={link.href} className={`${michroma.className} block w-full py-2 text-center`}>
                 {link.label}
               </Link>
             ))}
             <a
               className="inline-block w-full rounded bg-accent-foreground px-4 py-2 text-center text-background"
-              href="#"
-            >
+              href="#">
               CTA
             </a>
           </nav>

@@ -38,8 +38,7 @@ function Footer({ className = '' }: { className?: string }): ReactElement {
               key={idx}
               href={href}
               aria-label={isLogo ? 'Aller à l’accueil' : undefined}
-              className={`${michroma.className} block text-muted-foreground hover:text-primary transition-colors`}
-            >
+              className={`${michroma.className} block text-muted-foreground hover:text-primary transition-colors`}>
               {isLogo ? (
                 <span className="inline-flex items-center">
                   {/* Light logo */}

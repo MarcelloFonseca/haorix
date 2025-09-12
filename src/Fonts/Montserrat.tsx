@@ -1,10 +1,10 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat } from 'next/font/google';
 
 //Font secondaire
 const montserrat = Montserrat({
-  weight:"400",
-  style: "normal",
-  subsets: ['latin']
+  weight: '400',
+  style: 'normal',
+  subsets: ['latin'],
 });
 
 export { montserrat };
