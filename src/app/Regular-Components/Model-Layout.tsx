@@ -4,15 +4,18 @@ import { ReactElement } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, Bounds, PresentationControls } from '@react-three/drei';
 import { EffectComposer, Outline, Selection } from '@react-three/postprocessing';
+import { useTheme } from 'next-themes';
 
 //TODO: Faire le responsive du canvas (ce n'est toujours pas fait)
-//TODO: Ajouter un fadein pour le outline (à voir si possible avec useRef sinon pas grave)
+//TODO: PARTIE 2: Faire une version du model qui tourne en automatique pour la version mobile...
 
 function ModelLayout({ children }: { children: React.ReactNode }): ReactElement {
+
+  const { theme } = useTheme();
+
   return (
     <div className="border-2 border-red-500 lg:w-full lg:h-full">
       <Canvas camera={{ position: [0.6, 0.3, 2], fov: 55 }}>
-        {/*<axesHelper args={[5]} pour les axes x,y,z/>*/}
         <Selection>
           <Bounds fit clip observe margin={1}>
             <Center>
@@ -34,7 +37,7 @@ function ModelLayout({ children }: { children: React.ReactNode }): ReactElement 
           <ambientLight intensity={0.5} />
           <directionalLight position={[3, 5, 2]} color="white" />
           <EffectComposer autoClear={false}>
-            <Outline visibleEdgeColor={0xffffff} />
+            { theme === 'dark' ? <Outline visibleEdgeColor={0xffffff} /> : <Outline visibleEdgeColor={0x121212} /> }
           </EffectComposer>
         </Selection>
       </Canvas>
