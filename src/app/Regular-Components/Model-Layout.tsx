@@ -1,20 +1,19 @@
 'use client';
 
-import { ReactElement } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { ReactElement, useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { Center, Bounds, PresentationControls } from '@react-three/drei';
 import { EffectComposer, Outline, Selection } from '@react-three/postprocessing';
 import { useTheme } from 'next-themes';
 
-//TODO: Faire le responsive du canvas (ce n'est toujours pas fait)
-//TODO: PARTIE 2: Faire une version du model qui tourne en automatique pour la version mobile...
-
 function ModelLayout({ children }: { children: React.ReactNode }): ReactElement {
+
+  //TODO: Faire le responsiveness du canvas (ça a été commencé, mais pas fini)
 
   const { theme } = useTheme();
 
   return (
-    <div className="border-2 border-red-500 lg:w-full lg:h-full">
+    <div className="border-2 border-red-500 w-sm h-auto md:w-md md:h-full lg:w-full lg:h-full">
       <Canvas camera={{ position: [0.6, 0.3, 2], fov: 55 }}>
         <Selection>
           <Bounds fit clip observe margin={1}>
@@ -29,7 +28,6 @@ function ModelLayout({ children }: { children: React.ReactNode }): ReactElement 
                 speed={1}
                 zoom={2}
                 rotation={[-0.25, 0.35, 0]}>
-                domElement=
                 {children}
               </PresentationControls>
             </Center>
