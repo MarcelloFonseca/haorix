@@ -6,10 +6,16 @@ import { montserrat } from '@/Fonts/Montserrat';
 import { HDash } from './Regular-Components/H-Dash-Model';
 import { ModelLayout } from './Regular-Components/Model-Layout';
 
+//TODO: LE RESPONSIVENESS ICI EST EN COURS ET NON TERMINÉ (IMPORTANT)
+//TODO: LE TEST ROSE POUR IPAD PRO FONCTIONNE, JE SUIS RENDU À FAIRE LE VRAI RESPONSIVENESS POUR IPAD PRO
+//TODO: JE VAIS POUVOIR METTRE LE TOUT SUR UNE COLONNE POUR IPAD PRO (PORTRAIT) ET DEUX COLONNES POUR IPAD PRO (LANDSCAPE)
+//TODO: PAR LA SUITE, IL FAUT QUE JE REGLE LES INTERACTIONS POUR TOUT LES BREAKPOINTS (TABLETTE ET MOBILE)
+
 function Home(): ReactElement {
   return (
-    <section className="bg-[var(--backgroundV2)] dark:bg-popover flex w-full justify-center border-2 border-white min-h-[60svh]">
-      <div className="flex-1 grid grid-cols-1 gap-6 lg:grid-cols-2 border-2 border-blue-500 pt-7">
+    <section className="bg-[var(--backgroundV2)] dark:bg-popover flex flex-col w-full min-h-[60svh] border-2 border-white 
+    ipadpro:bg-pink-500 lg:min-h-[60svh] lg:h-auto lg:p-2 lg:flex lg:justify-center">
+      <div className="flex-1 grid grid-cols-1 gap-3 lg:grid-cols-2 border-2 border-blue-500 pt-7">
         <div className="flex flex-col gap-y-6 border-2 border-purple-400 p-5">
           <h1 className={`${michroma.className} text-4xl`}>Test1</h1>
           <p className={`${montserrat.className} text-base leading-relaxed text-pretty`}>
@@ -26,8 +32,7 @@ function Home(): ReactElement {
             </button>
           </div>
         </div>
-
-        <div className="border-2 border-orange-400 ">
+        <div className="border-2 border-orange-400 m-0 flex flex-col items-center w-auto h-full lg:w-full lg:h-auto">
           <div className="relative aspect-[16/10] w-full overflow-hidden">
             <ModelLayout>
               <HDash />

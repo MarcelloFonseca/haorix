@@ -8,15 +8,13 @@ import { useTheme } from 'next-themes';
 
 function ModelLayout({ children }: { children: React.ReactNode }): ReactElement {
 
-  //TODO: Faire le responsiveness du canvas (ça a été commencé, mais pas fini)
-
   const { theme } = useTheme();
 
   return (
-    <div className="border-2 border-red-500 w-sm h-auto md:w-md md:h-full lg:w-full lg:h-full">
+    <div className="border-2 border-red-500 h-full w-auto lg:w-full lg:h-full p-1">
       <Canvas camera={{ position: [0.6, 0.3, 2], fov: 55 }}>
         <Selection>
-          <Bounds fit clip observe margin={1}>
+          <Bounds fit clip margin={1}>
             <Center>
               <PresentationControls
                 enabled={true}

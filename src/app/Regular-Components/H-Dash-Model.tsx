@@ -18,7 +18,7 @@ function HDash(): ReactElement {
   useFrame(({ clock }) => {
     if (!animation.current) return;
     const t = clock.getElapsedTime();
-    const angle = Math.sin(t * 0.5) * (Math.PI / 12);
+    const angle = Math.sin(t * 0.5) * (Math.PI / 24);
     animation.current.rotation.y = angle;
 });
 

@@ -4,6 +4,10 @@
 /*@custom-variant dark (&:is(.dark *));*/
 @custom-variant dark (&:where(.dark, .dark *)); /* Contrôle du dark mode dans le html tree */
 
+@custom-variant ipadpro {
+  @media (width: 1024px) and (orientation: portrait) { @slot; }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-backgroundV2: var(--backgroundV2);

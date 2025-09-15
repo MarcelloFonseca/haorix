@@ -78,14 +78,13 @@ function NavBar(): ReactElement {
         </NavigationMenuList>
       </NavigationMenu>
 
-      {/* Desktop action + theme toggle (≥ lg) */}
-      <div className="hidden lg:flex items-center h-auto space-x-6">
-        <button
+      <div className="hidden lg:flex lg:items-center lg:h-auto lg:w-auto lg:space-x-4 lg:overflow-y-hidden">
+        <button 
           className={`${michroma.className} inline w-[100px] p-1 cursor-pointer
                       text-background dark:text-background
                       bg-accent-foreground dark:bg-accent-foreground
                       border border-accent-foreground dark:border-accent-foreground
-                      hover:bg-background hover:text-foreground`}>
+                      hover:bg-background hover:text-foreground ml-2.5`}>
           Test
         </button>
         <SetThemeButton />
