@@ -8,6 +8,10 @@
   @media (width: 1024px) and (orientation: portrait) { @slot; }
 }
 
+@custom-variant ipadpro-land {
+  @media (width: 1366px) and (orientation: landscape) { @slot; }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-backgroundV2: var(--backgroundV2);
