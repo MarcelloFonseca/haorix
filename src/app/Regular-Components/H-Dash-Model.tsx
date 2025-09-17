@@ -1,22 +1,26 @@
 'use client';
 
-import { ReactElement, useState, useRef, useEffect } from 'react';
+import { ReactElement, useState, useRef } from 'react';
 import { useGLTF, Html } from '@react-three/drei';
 import { Select } from '@react-three/postprocessing';
 import { michroma } from '@/Fonts/Michroma';
 import { useFrame } from '@react-three/fiber';
-import MediaQuery, { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
+import * as THREE from 'three';
 
 //FAIT: Responsiveness du model 3D (mobile/tablette/desktop) + animation et interactions
 
 function HDash(): ReactElement {
   const { scene } = useGLTF('/H-Dash-Off-optimized.gltf');
   const [hovered, setHovered] = useState(false);
-  const animation = useRef<any>(null);
+  const animation = useRef<THREE.Group>(null!);
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-
+  const isTabletPortrait = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1024px) and (orientation: portrait)'}); 
+  const isTabletLandscape = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1366px) and (orientation: landscape)'});
+  const isTablet = isTabletPortrait || isTabletLandscape;
+  
   useFrame(({ clock }) => {
-    if (!animation.current) return;
+    if (!(isMobile || isTablet) || !animation.current) return;
     const t = clock.getElapsedTime();
     const angle = Math.sin(t * 0.5) * (Math.PI / 24);
     animation.current.rotation.y = angle;
@@ -24,11 +28,9 @@ function HDash(): ReactElement {
 
 function ResponsiveScale(): ReactElement {
   return (
-  <MediaQuery maxWidth={768}>
       <group ref={animation}>
         <primitive object={scene} />
       </group>
-  </MediaQuery> 
   )};
 
   function DesktopScale(): ReactElement {
@@ -47,8 +49,8 @@ function ResponsiveScale(): ReactElement {
 
   return (
     <>
-      <Select enabled={hovered} >
-        {isMobile ? <ResponsiveScale /> : <DesktopScale />}
+      <Select enabled={hovered && !(isMobile || isTablet)}>
+        {isMobile || isTablet ? <ResponsiveScale /> : <DesktopScale />}
       </Select>
     </>
   );
