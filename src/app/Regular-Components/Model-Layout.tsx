@@ -11,7 +11,7 @@ function ModelLayout({ children }: { children: React.ReactNode }): ReactElement 
   const { theme } = useTheme();
 
   return (
-    <div className="border-2 border-red-500 h-full w-auto lg:w-full lg:h-full p-1">
+    <div className="h-full w-auto lg:w-full lg:h-full p-1">
       <Canvas camera={{ position: [0.6, 0.3, 2], fov: 55 }}>
         <Selection>
           <Bounds fit clip margin={1}>

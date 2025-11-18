@@ -37,10 +37,10 @@ function ResponsiveScale(): ReactElement {
     return (
       <group onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)}>
         <Html center scale={0.5} position={[-0.6, 0.35, 0]} distanceFactor={1} zIndexRange={[10, 0]}>
-        <div
+        {/*<div
           className={`${michroma.className} bg-[var(--foreground)] text-[var(--background)] w-25 p-2 rounded-xl text-xs`}>
           Manipulez!
-        </div>
+        </div>*/}
       </Html>
         <primitive object={scene} />
       </group>
