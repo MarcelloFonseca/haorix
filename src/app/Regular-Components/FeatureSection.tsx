@@ -9,7 +9,7 @@ function FeaturesSection(): ReactElement {
   return (
     <section className="relative bg-[var(--backgroundV2)] dark:bg-popover w-full py-16 md:py-24">
       <div className="flex justify-center mb-12 md:mb-16">
-        <div className="w-300 h-px bg-zinc-300 dark:bg-zinc-700"></div>
+        <div className="w-[180px] sm:w-[240px] md:w-[300px] h-px bg-zinc-300 dark:bg-zinc-700"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -30,9 +30,9 @@ function FeaturesSection(): ReactElement {
           </p>
         </div>
 
-        <div className="grid grid-cols-6 gap-4 auto-rows-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-4 lg:gap-6 auto-rows-[minmax(220px,_auto)] xl:auto-rows-[minmax(240px,_auto)]">
           
-          <div className="col-span-6 lg:col-span-3 row-span-2 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-8 relative overflow-hidden group hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+          <div className="col-span-1 md:col-span-2 xl:col-span-3 xl:row-span-2 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-8 relative overflow-hidden group hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 h-full flex flex-col">
               <div className="space-y-3">
@@ -77,7 +77,7 @@ function FeaturesSection(): ReactElement {
             </div>
           </div>
 
-          <div className="col-span-6 sm:col-span-3 lg:col-span-2 row-span-2 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-6 relative overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+          <div className="col-span-1 md:col-span-1 xl:col-span-2 xl:row-span-2 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-6 relative overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
             <div className="h-full flex flex-col">
               <div className="space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-500/20 flex items-center justify-center">
@@ -121,7 +121,7 @@ function FeaturesSection(): ReactElement {
             </div>
           </div>
 
-          <div className="col-span-6 sm:col-span-3 lg:col-span-1 row-span-2 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-6 relative overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+          <div className="col-span-1 md:col-span-1 xl:col-span-1 xl:row-span-2 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-6 relative overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
             <div className="h-full flex flex-col">
               <div className="space-y-2">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 border border-violet-500/20 flex items-center justify-center">
@@ -153,7 +153,7 @@ function FeaturesSection(): ReactElement {
             </div>
           </div>
 
-          <div className="col-span-6 lg:col-span-4 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-6 relative overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+          <div className="col-span-1 md:col-span-2 xl:col-span-4 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-6 relative overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 h-full">
               <div className="flex-1 space-y-2">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/20 to-orange-500/20 border border-red-500/20 flex items-center justify-center">
@@ -182,7 +182,7 @@ function FeaturesSection(): ReactElement {
             </div>
           </div>
 
-          <div className="col-span-6 sm:col-span-3 lg:col-span-2 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-6 relative overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
+          <div className="col-span-1 md:col-span-1 xl:col-span-2 rounded-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 p-6 relative overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none">
             <div className="h-full flex flex-col">
               <div className="space-y-2">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/20 flex items-center justify-center">

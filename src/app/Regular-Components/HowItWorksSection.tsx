@@ -7,9 +7,9 @@ import { Workflow, Lock, Shield, CheckCircle2 } from 'lucide-react';
 
 function HowItWorksSection(): ReactElement {
   return (
-    <section className="relative bg-white dark:bg-popover w-full py-16 md:py-32">
+    <section className="relative bg-white dark:bg-popover w-full py-16 md:py-24 lg:py-32">
       <div className="flex justify-center mb-12 md:mb-16">
-        <div className="w-300 h-px bg-zinc-300 dark:bg-zinc-700"></div>
+        <div className="w-[180px] sm:w-[240px] md:w-[300px] h-px bg-zinc-300 dark:bg-zinc-700"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -19,22 +19,22 @@ function HowItWorksSection(): ReactElement {
             <span className={`${montserrat.className} text-sm text-zinc-700 dark:text-zinc-300`}>Test</span>
           </div>
           
-          <h2 className={`${michroma.className} text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-black dark:text-white`}>
+          <h2 className={`${michroma.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black dark:text-white`}>
             Test test test
             <br />
             <span className="text-zinc-500 dark:text-zinc-400">test test test</span>
           </h2>
           
-          <p className={`${montserrat.className} text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto`}>
+          <p className={`${montserrat.className} text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto`}>
             Test test test test test test test test test test test test test test test test.
           </p>
         </div>
 
-        <div className="space-y-24 md:space-y-32">
+        <div className="space-y-16 md:space-y-24 lg:space-y-32">
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-3">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start lg:items-center">
+            <div className="space-y-6 text-center lg:text-left">
+              <div className="inline-flex items-center gap-3 justify-center lg:justify-start">
                 <div className="w-14 h-14 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center">
                   <span className={`${michroma.className} text-xl font-bold text-black dark:text-white`}>01</span>
                 </div>
@@ -42,15 +42,15 @@ function HowItWorksSection(): ReactElement {
               </div>
 
               <div className="space-y-4">
-                <h3 className={`${michroma.className} text-3xl md:text-4xl font-bold text-black dark:text-white`}>
+                <h3 className={`${michroma.className} text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white`}>
                   Test test test
                 </h3>
-                <p className={`${montserrat.className} text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}>
+                <p className={`${montserrat.className} text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto lg:mx-0`}>
                   Test test test test test test test test test test test test test test test test test test test test test.
                 </p>
               </div>
 
-              <ul className="space-y-3 pt-2">
+              <ul className="space-y-3 pt-2 text-left">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-zinc-500 dark:bg-zinc-500 flex-shrink-0 mt-2" />
                   <span className={`${montserrat.className} text-zinc-700 dark:text-zinc-300`}>
@@ -72,8 +72,8 @@ function HowItWorksSection(): ReactElement {
               </ul>
             </div>
 
-            <div className="relative">
-              <div className="rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-none p-8 space-y-8">
+            <div className="relative w-full max-w-xl lg:max-w-none mx-auto">
+              <div className="rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-none p-6 sm:p-8 space-y-8">
                 <div className="flex items-center justify-between p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-zinc-200 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center">
@@ -132,8 +132,8 @@ function HowItWorksSection(): ReactElement {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="lg:order-1 relative">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start lg:items-center">
+            <div className="lg:order-1 relative w-full max-w-xl lg:max-w-none mx-auto">
               <div className="rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-none p-6 space-y-4">
                 <div className="flex items-center justify-between pb-4 border-b border-zinc-200 dark:border-zinc-800">
                   <h4 className={`${michroma.className} text-base font-semibold text-black dark:text-white`}>Test Test Test</h4>
@@ -193,8 +193,8 @@ function HowItWorksSection(): ReactElement {
               </div>
             </div>
 
-            <div className="space-y-6 lg:order-2">
-              <div className="inline-flex items-center gap-3">
+            <div className="space-y-6 lg:order-2 text-center lg:text-left">
+              <div className="inline-flex items-center gap-3 justify-center lg:justify-start">
                 <div className="w-14 h-14 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center">
                   <span className={`${michroma.className} text-xl font-bold text-black dark:text-white`}>02</span>
                 </div>
@@ -202,15 +202,15 @@ function HowItWorksSection(): ReactElement {
               </div>
 
               <div className="space-y-4">
-                <h3 className={`${michroma.className} text-3xl md:text-4xl font-bold text-black dark:text-white`}>
+                <h3 className={`${michroma.className} text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white`}>
                   Test test test
                 </h3>
-                <p className={`${montserrat.className} text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}>
+                <p className={`${montserrat.className} text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto lg:mx-0`}>
                   Test test test test test test test test test test test test test test test test test test test.
                 </p>
               </div>
 
-              <ul className="space-y-3 pt-2">
+              <ul className="space-y-3 pt-2 text-left">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-zinc-500 flex-shrink-0 mt-2" />
                   <span className={`${montserrat.className} text-zinc-700 dark:text-zinc-300`}>
@@ -233,9 +233,9 @@ function HowItWorksSection(): ReactElement {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-3">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start lg:items-center">
+            <div className="space-y-6 text-center lg:text-left">
+              <div className="inline-flex items-center gap-3 justify-center lg:justify-start">
                 <div className="w-14 h-14 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center">
                   <span className={`${michroma.className} text-xl font-bold text-black dark:text-white`}>03</span>
                 </div>
@@ -243,15 +243,15 @@ function HowItWorksSection(): ReactElement {
               </div>
 
               <div className="space-y-4">
-                <h3 className={`${michroma.className} text-3xl md:text-4xl font-bold text-black dark:text-white`}>
+                <h3 className={`${michroma.className} text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white`}>
                   Test test test
                 </h3>
-                <p className={`${montserrat.className} text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}>
+                <p className={`${montserrat.className} text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto lg:mx-0`}>
                   Test test test test test test test test test test test test test test test test test test.
                 </p>
               </div>
 
-              <ul className="space-y-3 pt-2">
+              <ul className="space-y-3 pt-2 text-left">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-zinc-500 flex-shrink-0 mt-2" />
                   <span className={`${montserrat.className} text-zinc-700 dark:text-zinc-300`}>
@@ -273,7 +273,7 @@ function HowItWorksSection(): ReactElement {
               </ul>
             </div>
 
-            <div className="relative">
+            <div className="relative w-full max-w-xl lg:max-w-none mx-auto">
               <div className="rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-none p-6 space-y-5">
                 <div className="flex items-center justify-between pb-4 border-b border-zinc-200 dark:border-zinc-800">
                   <h4 className={`${michroma.className} text-base font-semibold text-black dark:text-white`}>Test Test Test</h4>
@@ -283,7 +283,7 @@ function HowItWorksSection(): ReactElement {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/50 space-y-1">
                     <div className={`${michroma.className} text-2xl font-bold text-black dark:text-white`}>2 847</div>
                     <div className={`${montserrat.className} text-xs text-zinc-500`}>Test test</div>

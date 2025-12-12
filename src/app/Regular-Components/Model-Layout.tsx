@@ -1,17 +1,17 @@
 'use client';
 
-import { ReactElement, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { ReactElement } from 'react';
+import { useTheme } from 'next-themes';
+import { Canvas } from '@react-three/fiber';
 import { Center, Bounds, PresentationControls } from '@react-three/drei';
 import { EffectComposer, Outline, Selection } from '@react-three/postprocessing';
-import { useTheme } from 'next-themes';
 
 function ModelLayout({ children }: { children: React.ReactNode }): ReactElement {
 
   const { theme } = useTheme();
 
   return (
-    <div className="h-full w-auto lg:w-full lg:h-full p-1">
+    <div className="h-full w-full p-1 md:p-2">
       <Canvas camera={{ position: [0.6, 0.3, 2], fov: 55 }}>
         <Selection>
           <Bounds fit clip margin={1}>

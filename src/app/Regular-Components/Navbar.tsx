@@ -1,21 +1,15 @@
 'use client';
 
-import * as React from 'react';
 import Link from 'next/link';
+import * as React from 'react';
 import { useState } from 'react';
 import { ReactElement } from 'react';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
-import { HamburgerMenu } from './Hamburger-menu';
+import { michroma } from '@/Fonts/Michroma';
 import { SetThemeButton } from './setTheme';
 import { montserrat } from '@/Fonts/Montserrat';
-import { michroma } from '@/Fonts/Michroma';
+import { HamburgerMenu } from './Hamburger-menu';
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
+
 
 //FAIT!(Tablette)
 
@@ -29,7 +23,8 @@ const navLinks: NavItems[] = [
 ];
 
 function NavBar(): ReactElement {
-  const [open, setOpen] = useState(false);
+
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <>

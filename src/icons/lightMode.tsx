@@ -1,7 +1,7 @@
 'use client';
 import { ReactElement } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons/faSun';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type Size = 'lg' | 'xl';
 

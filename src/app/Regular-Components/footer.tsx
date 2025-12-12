@@ -1,8 +1,8 @@
 'use client';
 
-import { ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ReactElement } from 'react';
 import { michroma } from '@/Fonts/Michroma';
 
 //FAIT:(Tablette)

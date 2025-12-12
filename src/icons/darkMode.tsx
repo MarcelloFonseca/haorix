@@ -1,7 +1,8 @@
 'use client';
+
+import { ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon';
-import { ReactElement } from 'react';
 
 function DarkModeIcon({
   className,

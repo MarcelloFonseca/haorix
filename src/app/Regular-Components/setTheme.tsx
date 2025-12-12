@@ -1,11 +1,13 @@
 'use client';
 
-import { ReactElement, useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { DarkModeIcon } from '@/icons/darkMode';
 import { LightModeIcon } from '@/icons/lightMode';
+import { ReactElement, useEffect, useState } from 'react';
+
 
 function SetThemeButton(): ReactElement | null {
+
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
