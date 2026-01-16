@@ -12,8 +12,6 @@
   @media (width: 1366px) and (orientation: landscape) { @slot; }
 }
 
-/*TODO: Ajouter un media query pour les tablettes en mode landscape. Sera utilisé dans le NavBar*/
-
 @theme inline {
   --color-background: var(--background);
   --color-backgroundV2: var(--backgroundV2);
