@@ -32,55 +32,70 @@ function NavBar(): ReactElement {
         <NavigationMenuList className="flex w-full flex-row items-center space-x-6">
           <NavigationMenuItem className={michroma.className}>
             <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
-              Item One
+              Produits
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Link One</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>H-Viz</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>H-Dash</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Accessoires & Add-ons</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
           <NavigationMenuItem className={michroma.className}>
             <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
-              Item Two
+              Solutions
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Link Two</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Exécution au poste (MES)</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Traçabilité (QR / RFID)</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Andon & signalisation</NavigationMenuLink>
+              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Instructions 2D/3D & qualité</NavigationMenuLink>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className={michroma.className}>
+          {/*<NavigationMenuItem className={michroma.className}>
             <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
-              Item Three
+              Comment ça marche
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Link three</NavigationMenuLink>
             </NavigationMenuContent>
-          </NavigationMenuItem>
+          </NavigationMenuItem>*/}
 
-          <NavigationMenuItem className={michroma.className}>
+          <NavigationMenuLink 
+          className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
+          Comment ça marche
+          </NavigationMenuLink>
+
+          <NavigationMenuLink 
+          className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
+          Prix
+          </NavigationMenuLink>
+
+          {/*<NavigationMenuItem className={michroma.className}>
             <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
-              Item Four
+            Prix
             </NavigationMenuTrigger>
-            <NavigationMenuContent>
+            {/*<NavigationMenuContent>
               <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Link Four</NavigationMenuLink>
             </NavigationMenuContent>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
 
           <NavigationMenuLink
             className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
-            Test
+            Ressources
           </NavigationMenuLink>
         </NavigationMenuList>
       </NavigationMenu>
 
       <div className="hidden lg:flex lg:items-center lg:h-auto lg:w-auto lg:space-x-4 lg:overflow-y-hidden">
         <button 
-          className={`${michroma.className} inline w-[100px] p-1 cursor-pointer
+          className={`${michroma.className} text-xs inline w-[200px] p-1.5 cursor-pointer
                       text-background dark:text-background
                       bg-accent-foreground dark:bg-accent-foreground
                       border border-accent-foreground dark:border-accent-foreground
                       hover:bg-background hover:text-foreground ml-2.5`}>
-          Test
+                        Demander une démo
         </button>
         <SetThemeButton />
       </div>
