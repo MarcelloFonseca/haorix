@@ -1,6 +1,7 @@
 "use client"
 import { useScroll, useTransform, motion } from "framer-motion"
 import React, { useEffect, useRef, useState } from "react"
+import { michroma } from "@/Fonts/Michroma"
 import { Shield } from "lucide-react"
 
 interface TimelineEntry {
@@ -37,15 +38,18 @@ const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       <div className="text-center space-y-6 max-w-3xl mx-auto mb-20">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 border border-zinc-200 text-sm text-zinc-700 dark:bg-zinc-900/50 dark:border-zinc-800 dark:text-zinc-400">
           <Shield className="w-4 h-4" />
-          <span>Test Test</span>
+          <span>Notre parcours</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white leading-tight">
-          Test test test
+
+        <h2 className={`${michroma.className} text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white leading-tight`}>
+          L’histoire d’HAORIX
           <br />
-          <span className="text-zinc-500 dark:text-zinc-400">test test test</span>
+          <span className="text-zinc-500 dark:text-zinc-400">construite sur le terrain</span>
         </h2>
+
         <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400">
-          Test test test test test test test test test test test test test test.
+          Une évolution guidée par des besoins manufacturiers réels : simplicité au poste, performance continue,
+          robustesse et modularité — pour relier les données d’entreprise à l’exécution sur le plancher.
         </p>
       </div>
       
@@ -83,11 +87,11 @@ const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-zinc-900 dark:from-white via-zinc-600 dark:via-zinc-500 to-transparent from-[0%] via-[12%] rounded-full"
           />
         </div>
       </div>
-    </div>
+    </div> 
   )
 }
 

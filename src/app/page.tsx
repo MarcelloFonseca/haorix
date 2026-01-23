@@ -4,13 +4,14 @@ import { ReactElement } from 'react';
 import { michroma } from '@/Fonts/Michroma';
 import { montserrat } from '@/Fonts/Montserrat';
 import { useMediaQuery } from 'react-responsive';
-import { CheckCircle, CheckCircle2 } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { Timeline } from './Regular-Components/Timeline';
 import { HDash } from './Regular-Components/H-Dash-Model';
 import { ModelLayout } from './Regular-Components/Model-Layout';
 import { FeaturesSection } from './Regular-Components/FeatureSection';
 import { EnterpriseSection } from './Regular-Components/EntrepriseSection';
 import { HowItWorksSection } from './Regular-Components/HowItWorksSection';
+import { FAQ } from './Regular-Components/faq';
 
 interface Responsiveness {
   isMobile: boolean & { query?: string };
@@ -26,162 +27,75 @@ function Home(): ReactElement {
   const isTabletLandscape: Responsiveness['isTabletLandscape'] = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1366px) and (orientation: landscape)'});
   const isDesktop: Responsiveness['isDesktop'] = useMediaQuery({ query: '(min-width: 1367px)' });
   const isTablet: Responsiveness['isTablet'] = isTabletPortrait || isTabletLandscape;
-  
+
+
+  //À EXPORT
   const timelineData = [
-    {
-      title: "Test 1",
-      content: (
-        <div className="space-y-6">
-          <p className="text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed">
-            Test test test test test test test test test test test test test test test test test test test test test test.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="rounded-xl bg-white/80 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 space-y-2 shadow-sm">
-              <div className="text-3xl font-bold text-zinc-900 dark:text-white">1000+</div>
-              <div className="text-sm text-zinc-700 dark:text-zinc-500">Test Test</div>
-            </div>
-            <div className="rounded-xl bg-white/80 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 space-y-2 shadow-sm">
-              <div className="text-3xl font-bold text-zinc-900 dark:text-white">99.99%</div>
-              <div className="text-sm text-zinc-700 dark:text-zinc-500">Test Test</div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Test 2",
-      content: (
-        <div className="space-y-6">
-          <p className="text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed">
-            Test test test test test test test test test test test test test test test test test test test test test.
-          </p>
-          <div className="space-y-3">
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" />
-              <div>
-                <div className="text-zinc-900 dark:text-white font-medium">Test Test Test</div>
-                <div className="text-sm text-zinc-600 dark:text-zinc-500">Test test test</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" />
-              <div>
-                <div className="text-zinc-900 dark:text-white font-medium">Test Test Test</div>
-                <div className="text-sm text-zinc-600 dark:text-zinc-500">Test test test</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" />
-              <div>
-                <div className="text-zinc-900 dark:text-white font-medium">Test Test Test</div>
-                <div className="text-sm text-zinc-600 dark:text-zinc-500">Test test test</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Test 3",
-      content: (
-        <div className="space-y-6">
-          <p className="text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed">
-            Test test test test test test test test test test test test test test test test test test test test.
-          </p>
-          <div className="rounded-xl bg-white/80 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 space-y-4 shadow-sm">
-            <div className="text-zinc-900 dark:text-white font-medium">Test Test Test</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-              <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
-                Test Test
-              </div>
-              <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
-                Test Test
-              </div>
-              <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
-                Test Test
-              </div>
-              <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
-                Test Test
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Test 4",
-      content: (
-        <div className="space-y-6">
-          <p className="text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed">
-            Test test test test test test test test test test test test test test test test test test test test test test.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="rounded-xl bg-white/80 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 space-y-2 shadow-sm">
-              <div className="text-3xl font-bold text-zinc-900 dark:text-white">500+</div>
-              <div className="text-sm text-zinc-700 dark:text-zinc-500">Test Test</div>
-            </div>
-            <div className="rounded-xl bg-white/80 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 space-y-2 shadow-sm">
-              <div className="text-3xl font-bold text-zinc-900 dark:text-white">24/7</div>
-              <div className="text-sm text-zinc-700 dark:text-zinc-500">Test Test</div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Test 5",
-      content: (
-        <div className="space-y-6">
-          <p className="text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed">
-            Test test test test test test test test test test test test test test test test test test test test test.
-          </p>
-          <div className="space-y-3">
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" />
-              <div>
-                <div className="text-zinc-900 dark:text-white font-medium">Test Test Test</div>
-                <div className="text-sm text-zinc-600 dark:text-zinc-500">Test test test</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" />
-              <div>
-                <div className="text-zinc-900 dark:text-white font-medium">Test Test Test</div>
-                <div className="text-sm text-zinc-600 dark:text-zinc-500">Test test test</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Test 6",
-      content: (
-        <div className="space-y-6">
-          <p className="text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed">
-            Test test test test test test test test test test test test test test test test test test test test.
-          </p>
-          <div className="rounded-xl bg-white/80 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 space-y-4 shadow-sm">
-            <div className="text-zinc-900 dark:text-white font-medium">Test Test Test</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-              <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
-                Test Test
-              </div>
-              <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
-                Test Test
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-  ];
+  {
+    title: "01",
+    content: (
+      <div className="space-y-4 max-w-4xl">
+        <h4 className={`${michroma.className} text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white`}>
+          La création d’HAORIX
+        </h4>
+        <p className={`${montserrat.className} text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed`}>
+          HAORIX est né d’un besoin concret en milieu manufacturier : accéder à l’information rapidement et interagir efficacement avec les systèmes numériques, directement sur le plancher de production.
+        </p>
+        <p className={`${montserrat.className} text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed`}>
+          Notre objectif a toujours été de rendre les données d’entreprise (ERP, production, qualité) plus accessibles, dans une expérience intuitive et orientée terrain.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "02",
+    content: (
+        <div className="space-y-4 max-w-4xl">
+        <h4 className={`${michroma.className} text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white`}>
+          Notre parcours : expertise système et expérience utilisateur
+        </h4>
+        <p className={`${montserrat.className} text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed`}>
+          Le développement d’HAORIX s’appuie sur une complémentarité claire. Henri se concentre sur l’architecture produit, le prototypage, les systèmes embarqués et l’optimisation.
+        </p>
+        <p className={`${montserrat.className} text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed`}>
+          Marcello développe des interfaces structurées, lisibles et pensées pour une utilisation simple en contexte industriel.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "03",
+    content: (
+        <div className="space-y-4 max-w-4xl">
+        <h4 className={`${michroma.className} text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white`}>
+          Prototypage, essais et optimisation continue
+        </h4>
+        <p className={`${montserrat.className} text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed`}>
+          HAORIX a été construit par itérations : prototypage rapide, essais, ajustements et optimisation.
+        </p>
+        <p className={`${montserrat.className} text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed`}>
+          Cette démarche nous permet d’améliorer en continu la fiabilité, la stabilité et la performance, autant sur le plan matériel que logiciel.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "04",
+    content: (
+      <div className="space-y-4 max-w-4xl">
+        <h4 className={`${michroma.className} text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white`}>
+          Modularité, personnalisation et robustesse
+        </h4>
+        <p className={`${montserrat.className} text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed`}>
+          Chaque usine a ses réalités. HAORIX est conçu comme une solution modulaire et personnalisable, capable d’évoluer selon les postes, les procédés et les priorités.
+        </p>
+        <p className={`${montserrat.className} text-zinc-700 dark:text-zinc-400 text-base md:text-lg leading-relaxed`}>
+          Le tout est pensé pour rester fiable dans des environnements exigeants, où la robustesse est essentielle.
+        </p>
+      </div>
+    ),
+  },
+]
 
   return (
     <div className="relative bg-[var(--backgroundV2)] dark:bg-popover w-full min-h-screen overflow-hidden">
@@ -280,6 +194,10 @@ function Home(): ReactElement {
       <div className="relative z-10">
         <Timeline data={timelineData} />
       </div>
+
+      <div className="relative z-10">
+        <FAQ />
+        </div>
     </div>
   );
 } 

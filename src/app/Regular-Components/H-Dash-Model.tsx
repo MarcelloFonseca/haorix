@@ -19,7 +19,7 @@ function HDash(): ReactElement {
   //const { scene } = useGLTF('/H-Dash-Off-optimized.gltf');
 const animation = useRef<THREE.Group>(null!);
 const [hovered, setHovered] = useState<boolean>(false);
-const { scene } = useGLTF('/H-Viz-15-optimized.gltf');
+const { scene } = useGLTF('/AssemblageOptimized.gltf');
 const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 const isTabletPortrait: Responsiveness['isTabletPortrait'] = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1024px) and (orientation: portrait)' });
 const isTabletLandscape: Responsiveness['isTabletLandscape'] = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1366px) and (orientation: landscape)' });
@@ -58,5 +58,5 @@ function ResponsiveScale(): ReactElement {
   );
 }
 
-useGLTF.preload('/H-Viz-15-optimized.gltf'); // loader le model en avance
+useGLTF.preload('/AssemblageOptimized.gltf'); // loader le model en avance
 export { HDash };

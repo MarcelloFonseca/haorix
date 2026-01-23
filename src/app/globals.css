@@ -12,6 +12,7 @@
   @media (width: 1366px) and (orientation: landscape) { @slot; }
 }
 
+
 @theme inline {
   --color-background: var(--background);
   --color-backgroundV2: var(--backgroundV2);
@@ -135,3 +136,4 @@
     height: auto;
   }
 }
+

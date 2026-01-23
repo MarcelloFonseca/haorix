@@ -44,9 +44,9 @@ const footerLinks = {
   },
 };
 
-export function Footer() {
+export function Footer({className}: {className?: string}) {
   return (
-    <footer className={`border-t border-border/30 bg-background ${montserrat.className}`}>
+    <footer className={`border-t border-border/30 bg-background ${montserrat.className} ${className}`}>
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {Object.values(footerLinks).map((section) => (

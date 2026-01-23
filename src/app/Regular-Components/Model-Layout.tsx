@@ -27,9 +27,9 @@ function ModelLayout({ children }: { children: React.ReactNode }): ReactElement 
               azimuth={[-0.28, 0.28]}
               speed={1}
               zoom={1}
-              rotation={[0, Math.PI / 6, 0]}>
+              rotation={[0, Math.PI / 4, 0]}>
               <Center>
-                <group rotation={[-0.09, -0.55, -1.4]}>{children}</group>
+                <group rotation={[-0.09 + Math.PI, -2, -1.9]}>{children}</group>
               </Center>
             </PresentationControls>
           </Bounds>
