@@ -22,7 +22,7 @@ function HowItWorksSection(): ReactElement {
           </div>
 
           <h2 className={`${michroma.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black dark:text-white`}>
-            Du poste à la visibilité
+            La visualisation du poste
             <br />
             <span className="text-zinc-500 dark:text-zinc-400">en quelques étapes</span>
           </h2>
@@ -49,8 +49,8 @@ function HowItWorksSection(): ReactElement {
                   Déployez au poste, sans complexité
                 </h3>
                 <p className={`${montserrat.className} text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto lg:mx-0`}>
-                  Installez H-Viz sur la station de travail et connectez-le à votre environnement. Pas de PC externe :
-                  l’atelier obtient une interface dédiée, stable et prête pour l’opérateur.
+                  Installez H-Viz à la station de travail et connectez-le à votre environnement. Pas de PC externe :
+                  le poste obtient une interface dédiée, stable et prête pour l’opérateur.
                 </p>
               </div>
 
@@ -70,7 +70,7 @@ function HowItWorksSection(): ReactElement {
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-zinc-500 dark:bg-zinc-500 flex-shrink-0 mt-2" />
                   <span className={`${montserrat.className} text-zinc-700 dark:text-zinc-300`}>
-                    Expérience opérateur claire, stable et standardisée
+                    Expérience opérateur intuitive, stable et standardisée
                   </span>
                 </li>
               </ul>

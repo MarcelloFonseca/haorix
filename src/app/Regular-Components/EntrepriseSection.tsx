@@ -2,6 +2,7 @@
 
 import { ReactElement } from 'react';
 import { michroma } from '@/Fonts/Michroma';
+import { Zap, DatabaseZap, ChevronsLeftRightEllipsis, MessageCircleQuestionMark } from 'lucide-react';
 import { montserrat } from '@/Fonts/Montserrat';
 import { useMediaQuery } from 'react-responsive';
 
@@ -56,7 +57,7 @@ function EnterpriseSection(): ReactElement {
                     Supervision temps réel
                   </h3>
                   <p className={`${montserrat.className} text-sm md:text-base text-zinc-600 dark:text-white dark:opacity-70`}>
-                    Statuts postes, alertes qualité et maintenance remontent en continu sur vos H-Viz.
+                    Activités des postes, alertes qualité et mises à jour en continu vos H-Viz.
                   </p>
                 </div>
               </div>
@@ -87,33 +88,28 @@ function EnterpriseSection(): ReactElement {
                 </div>
 
                 <div className="space-y-6 mb-8">
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Ordres synchronisés / jour</span>
-                    <span className={`${michroma.className} text-xl md:text-2xl font-bold text-black dark:text-white`}>12 000</span>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span><Zap /></span>
+                     <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Connection fluide avec VizCo </span>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Latence moyenne</span>
-                    <span className={`${michroma.className} text-xl md:text-2xl font-bold text-black dark:text-white`}>1,4s</span>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span><DatabaseZap /></span>
+                    <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Connection Instantanée avec la base de donnée VizCo</span>
+                 
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Sites déployés</span>
-                    <span className={`${michroma.className} text-xl md:text-2xl font-bold text-black dark:text-white`}>57</span>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span><ChevronsLeftRightEllipsis /></span>
+                    <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Aucun temps d'arrêt entre les deux systèmes</span>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Support</span>
-                    <span className={`${michroma.className} text-xl md:text-2xl font-bold text-black dark:text-white`}>24/7 | FR-EN</span>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span><MessageCircleQuestionMark /></span>
+                    <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Support disponible (technicien Haorix et VizCo) </span>
                   </div>
                 </div>
 
-                <div className="pt-6 border-t border-zinc-200 dark:border-zinc-800">
-                  <p className={`${montserrat.className} text-sm md:text-base italic text-zinc-500 dark:text-white dark:opacity-60 leading-relaxed`}>
-                    “Les équipes de production suivent l’avancement depuis H-Viz, pendant que VizCo
-                    orchestre les flux critiques sans interruption.”
-                  </p>
-                </div>
               </div>
             </div>
           </div>

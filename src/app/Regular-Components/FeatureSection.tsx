@@ -98,7 +98,7 @@ function FeaturesSection(): ReactElement {
                 </div>
                 <h3 className={`${michroma.className} text-xl font-bold text-black dark:text-white`}>Add-ons modulaires</h3>
                 <p className={`${montserrat.className} text-sm text-zinc-600 dark:text-zinc-400`}>
-                Lecteur QR / code-barres pour accélérer la saisie, RFID pour identifier et renforcer la traçabilité, et lumières Andon pour escalader rapidement les besoins.
+                Lecteur QR / code-barres pour accélérer la saisie, capteur RFID pour identifier et renforcer la traçabilité, et lumières Andon pour escalader rapidement les besoins.
                 </p>
               </div>
 
@@ -143,7 +143,7 @@ function FeaturesSection(): ReactElement {
                   </svg>
                 </div>
                 <h3 className={`${michroma.className} text-lg font-bold text-black dark:text-white`}>Faible consommation</h3>
-                <p className={`${montserrat.className} text-xs text-zinc-500`}>Pensé pour tourner longtemps</p>
+                <p className={`${montserrat.className} text-xs text-zinc-500`}>Conçu pour rouler sans arrêts</p>
               </div>
 
               <div className="flex-1 flex flex-col justify-center items-center py-6">
@@ -174,7 +174,7 @@ function FeaturesSection(): ReactElement {
                 </div>
                 <h3 className={`${michroma.className} text-xl font-bold text-black dark:text-white`}>Pensé pour l’atelier</h3>
                 <p className={`${montserrat.className} text-sm text-zinc-600 dark:text-zinc-400`}>
-                  Robuste, ergonomique et écoénergétique — une console tout-en-un connectée à VizCo MES,
+                  Robuste, intuitif et sécurisé — une console tout-en-un connectée à VizCo MES, {/*AVEC ICONES !!! MATCHER*/}
                   sans ordinateur externe ni serveur TS.
                 </p>
               </div>
