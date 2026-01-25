@@ -89,14 +89,14 @@ function NavBar(): ReactElement {
       </NavigationMenu>
 
       <div className="hidden lg:flex lg:items-center lg:h-auto lg:w-auto lg:space-x-4 lg:overflow-y-hidden">
-        <button 
+        <Link href="/demo"><button 
           className={`${michroma.className} text-xs inline w-[200px] p-1.5 cursor-pointer
                       text-background dark:text-background
                       bg-accent-foreground dark:bg-accent-foreground
                       border border-accent-foreground dark:border-accent-foreground
                       hover:bg-background hover:text-foreground ml-2.5`}>
                         Demander une démo
-        </button>
+        </button></Link>
         <SetThemeButton />
       </div>
 
