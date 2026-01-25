@@ -11,7 +11,7 @@ export async function addData({data}: {data: Database['public']['Tables']['demo_
         .from('demo_form').insert({ nom: data.nom, courriel: data.courriel, entreprise: data.entreprise, poste: data.poste, industrie: data.industrie, taille: data.taille });
 
         if (error) {
-            console.log('Supabase insert error:', error);
+            console.log('Supabase insert error here:', error);
             throw new Error('Error inserting data into demo_form table');   
         }
 
