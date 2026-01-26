@@ -16,10 +16,11 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 type NavItems = { href: string; label: string };
 
 const navLinks: NavItems[] = [
-  { href: '#', label: 'Label-1' },
-  { href: '#', label: 'Label-2' },
-  { href: '#', label: 'Label-3' },
-  { href: '#', label: 'Label-4' },
+  { href: '#', label: 'Produits' },
+  { href: '#', label: 'Solutions' },
+  { href: '#', label: 'Comment ça marche' },
+  { href: '#', label: 'Prix' },
+  { href: '#', label: 'Ressources' }
 ];
 
 function NavBar(): ReactElement {
@@ -101,8 +102,10 @@ function NavBar(): ReactElement {
       </div>
 
       <div className="relative ml-auto lg:hidden">
-        <HamburgerMenu isOpen={open} onClick={() => setOpen((o) => !o)} controlsId="mobile-nav" className="" />
-
+        <div className='flex items-center gap-2'>
+          <SetThemeButton />
+          <HamburgerMenu isOpen={open} onClick={() => setOpen((o) => !o)} controlsId="mobile-nav" />
+            </div>
         <div
           id="mobile-nav"
           aria-hidden={!open}
@@ -120,11 +123,14 @@ function NavBar(): ReactElement {
                 {link.label}
               </Link>
             ))}
-            <a
-              className="inline-block w-full rounded bg-accent-foreground px-4 py-2 text-center text-background"
-              href="#">
-              CTA
-            </a>
+            <Link href="/demo"><button 
+              className={`${michroma.className} text-xs inline w-full p-1.5 cursor-pointer
+                          text-background dark:text-background
+                          bg-accent-foreground dark:bg-accent-foreground
+                          border border-accent-foreground dark:border-accent-foreground
+                          hover:bg-background hover:text-foreground mt-2.5`}>
+                            Demander une démo
+            </button></Link>
           </nav>
         </div>
       </div>

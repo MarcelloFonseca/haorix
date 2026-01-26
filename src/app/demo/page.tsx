@@ -49,7 +49,7 @@ const benefits = [
   },
   {
     icon: Shield,
-    title: 'Conçu pour l’atelier',
+    title: 'Conçu pour le plancher de production',
     description: 'Robuste, stable et adapté à l’usage industriel continu.',
   },
   {
@@ -58,8 +58,6 @@ const benefits = [
     description: 'Exécution plus rapide, moins de saisie et moins d’erreurs.',
   },
 ]
-
-const trustedBy = ['VizCo MES', 'Intégration atelier', 'Déploiement modulaire', 'Support dédié']
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<{[key: string]: string}>({
@@ -135,7 +133,7 @@ export default function ContactForm() {
 
             <p className="mt-4 text-lg text-muted-foreground">
               Remplissez le formulaire et un membre de notre équipe vous contactera pour valider vos besoins,
-              discuter de votre contexte atelier et planifier une démo.
+              discuter de votre contexte plancher de production et planifier une démo.
             </p>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -152,19 +150,6 @@ export default function ContactForm() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-12 border-t border-border pt-8">
-              <p className="mb-4 text-sm font-medium text-muted-foreground">
-                Conçu pour s’intégrer à votre réalité atelier
-              </p>
-              <div className="flex flex-wrap gap-6">
-                {trustedBy.map((item) => (
-                  <span key={item} className="text-sm font-medium text-foreground/60">
-                    {item}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
 
