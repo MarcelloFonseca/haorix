@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
 
     return config;
   },
+
+  turbopack: {
+
+    // Support future turbopack configs ici ...
+  }
 };
 
 export default nextConfig;
