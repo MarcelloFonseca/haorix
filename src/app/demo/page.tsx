@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { ConfirmationPage } from '../Regular-Components/Confirmation'
+import { ConfirmationPage } from '@/app/Regular-Components/Confirmation';
 import { Users, Zap, Shield, Clock, Workflow } from 'lucide-react'
 import { michroma } from '@/Fonts/Michroma'
 import { montserrat } from '@/Fonts/Montserrat'
