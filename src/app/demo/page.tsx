@@ -1,22 +1,15 @@
 'use client'
-
+import { addData } from '@/DB/api'
 import React, { useState } from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { michroma } from '@/Fonts/Michroma'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
-import { ConfirmationPage } from '@/app/RegularComponents/Confirmation';
-import { Users, Zap, Shield, Clock, Workflow } from 'lucide-react'
-import { michroma } from '@/Fonts/Michroma'
+import { Button } from '@/components/ui/button'
 import { montserrat } from '@/Fonts/Montserrat'
-import { addData } from '@/DB/api'
+import { Users, Zap, Shield, Clock, Workflow } from 'lucide-react'
+import { ConfirmationPage } from '@/app/RegularComponents/Confirmation';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+
 
 type industriesType = string[];
 

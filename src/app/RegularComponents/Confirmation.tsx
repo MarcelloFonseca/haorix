@@ -1,11 +1,12 @@
 'use client'
 
-import Link from 'next/link'
-import { CheckCircle, Mail, Calendar, ArrowRight, Clock, Users, Sparkles, Workflow } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { michroma } from '@/Fonts/Michroma'
-import { montserrat } from '@/Fonts/Montserrat'
+import Link from 'next/link';
+import { michroma } from '@/Fonts/Michroma';
+import { montserrat } from '@/Fonts/Montserrat';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { CheckCircle, Mail, Calendar, ArrowRight, Clock, Users, Sparkles, Workflow } from 'lucide-react';
+
 
 type NextSteps = {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;

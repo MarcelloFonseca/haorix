@@ -2,9 +2,9 @@
 
 import { ReactElement } from 'react';
 import { michroma } from '@/Fonts/Michroma';
-import { Zap, DatabaseZap, ChevronsLeftRightEllipsis, MessageCircleQuestionMark } from 'lucide-react';
 import { montserrat } from '@/Fonts/Montserrat';
 import { useMediaQuery } from 'react-responsive';
+import { Zap, DatabaseZap, ChevronsLeftRightEllipsis, MessageCircleQuestionMark } from 'lucide-react';
 
 function EnterpriseSection(): ReactElement {
   
@@ -90,13 +90,13 @@ function EnterpriseSection(): ReactElement {
                 <div className="space-y-6 mb-8">
                   <div className="flex flex-wrap items-center gap-3">
                     <span><Zap /></span>
-                     <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Connection fluide avec VizCo </span>
+                    <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Connection fluide avec VizCo </span>
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3">
                     <span><DatabaseZap /></span>
                     <span className={`${montserrat.className} text-base md:text-lg text-zinc-600 dark:text-white dark:opacity-70`}>Connection Instantanée avec la base de donnée VizCo</span>
-                 
+                    
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3">

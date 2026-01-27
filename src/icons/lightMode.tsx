@@ -1,4 +1,5 @@
 'use client';
+
 import { ReactElement } from 'react';
 import { faSun } from '@fortawesome/free-solid-svg-icons/faSun';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

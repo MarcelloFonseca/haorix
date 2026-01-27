@@ -1,7 +1,5 @@
 'use client';
 
-import * as React from 'react';
-
 type HamburgerMenuProps = {
   className?: string;
   isOpen: boolean;
@@ -10,7 +8,9 @@ type HamburgerMenuProps = {
 };
 
 function HamburgerMenu({ className, isOpen, onClick, controlsId = 'mobile-nav' }: HamburgerMenuProps) {
+
   return (
+    
     <button
       type="button"
       aria-label="Toggle menu"

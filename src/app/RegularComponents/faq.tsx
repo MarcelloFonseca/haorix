@@ -1,12 +1,11 @@
 'use client'
 
-import { useState } from 'react'
-import { ChevronLeft, ChevronRight, HelpCircle } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { michroma } from '@/Fonts/Michroma'
-import { montserrat } from '@/Fonts/Montserrat'
+import { useState } from 'react';
+import { michroma } from '@/Fonts/Michroma';
+import { montserrat } from '@/Fonts/Montserrat';
+import { Button } from '@/components/ui/button';
 import { QuickQuestionModal } from './QuestionForm';
-
+import { ChevronLeft, ChevronRight, HelpCircle } from 'lucide-react';
 
 const faqItems = [
   {

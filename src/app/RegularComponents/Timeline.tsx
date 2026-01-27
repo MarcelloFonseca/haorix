@@ -1,8 +1,9 @@
-"use client"
-import { useScroll, useTransform, motion } from "framer-motion"
-import React, { useEffect, useRef, useState } from "react"
-import { michroma } from "@/Fonts/Michroma"
-import { Shield } from "lucide-react"
+'use client';
+
+import { Shield } from "lucide-react";
+import { michroma } from "@/Fonts/Michroma";
+import React, { useEffect, useRef, useState } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 interface TimelineEntry {
   title: string

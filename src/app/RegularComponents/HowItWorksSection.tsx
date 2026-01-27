@@ -34,7 +34,7 @@ function HowItWorksSection(): ReactElement {
         </div>
 
         <div className="space-y-16 md:space-y-24 lg:space-y-32">
-         
+  
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start lg:items-center">
             <div className="space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-3 justify-center lg:justify-start">
@@ -136,7 +136,6 @@ function HowItWorksSection(): ReactElement {
             </div>
           </div>
 
-          {/* STEP 02 */}
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start lg:items-center">
             <div className="order-2 lg:order-1 relative w-full max-w-xl lg:max-w-none mx-auto">
               <div className="rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-none p-6 space-y-4">
@@ -242,7 +241,6 @@ function HowItWorksSection(): ReactElement {
             </div>
           </div>
 
-          {/* STEP 03 */}
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start lg:items-center">
             <div className="space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-3 justify-center lg:justify-start">

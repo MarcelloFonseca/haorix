@@ -3,9 +3,9 @@
 import { ReactElement } from 'react';
 import { CheckCircle } from 'lucide-react';
 import { michroma } from '@/Fonts/Michroma';
+import { FAQ } from './RegularComponents/faq';
 import { montserrat } from '@/Fonts/Montserrat';
 import { useMediaQuery } from 'react-responsive';
-import { FAQ } from './RegularComponents/faq';
 import { Timeline } from './RegularComponents/Timeline';
 import { HDash } from './RegularComponents/H-Dash-Model';
 import { ModelLayout } from './RegularComponents/Model-Layout';

@@ -7,7 +7,6 @@ import { ThemeProvider } from './theme-provider';
 import { Footer } from './RegularComponents/footer';
 import { NavBar } from './RegularComponents/Navbar';
 
-//FAIT:(Tablette)
 //TODO: Résoudre le probème pour lorsque le breakpoint est un peu plus gros que md (entre md et lg)
 export const metadata: Metadata = {
   title: 'Haorix | Accueil',

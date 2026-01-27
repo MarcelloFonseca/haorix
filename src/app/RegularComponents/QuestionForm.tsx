@@ -1,30 +1,16 @@
 'use client'
 
-import React, { useState } from 'react'
-import { MessageCircle, Send, CheckCircle, HelpCircle } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Textarea } from '@/components/ui/textarea'
-import { addDataQuestion } from '@/DB/api'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
-import { michroma } from '@/Fonts/Michroma'
-import { montserrat } from '@/Fonts/Montserrat'
-import { generateUUID } from 'three/src/math/MathUtils.js'
+import React, { useState } from 'react';
+import { addDataQuestion } from '@/DB/api';
+import { michroma } from '@/Fonts/Michroma';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { montserrat } from '@/Fonts/Montserrat';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { MessageCircle, Send, CheckCircle } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 
 const subjects = [
   { value: 'general', label: 'Question générale' },
