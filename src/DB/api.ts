@@ -23,3 +23,14 @@ export async function addData({data}: {data: Database['public']['Tables']['demo_
     throw new Error('Error inserting data');
   }
 }
+
+export async function addDataQuestion({data}: {data: Database['public']['Tables']['questions_form']['Insert']}) : Promise<void> {
+  const { error } = await getSupabase()
+    .from('questions_form')
+    .insert(data);
+
+  if (error) {
+    console.log('Supabase insert error:', error);
+    throw new Error('Error inserting data');
+  }
+}

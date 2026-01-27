@@ -18,26 +18,53 @@ export type Database = {
         Row: {
           courriel: string | null
           entreprise: string | null
+          id: number
           industrie: string | null
           nom: string | null
           poste: string | null
-          taille: number | null
+          taille: string | null
         }
         Insert: {
           courriel?: string | null
           entreprise?: string | null
+          id?: number
           industrie?: string | null
           nom?: string | null
           poste?: string | null
-          taille?: number | null
+          taille?: string | null
         }
         Update: {
           courriel?: string | null
           entreprise?: string | null
+          id?: number
           industrie?: string | null
           nom?: string | null
           poste?: string | null
-          taille?: number | null
+          taille?: string | null
+        }
+        Relationships: []
+      }
+      questions_form: {
+        Row: {
+          courriel: string | null
+          customerid: number
+          message: string | null
+          nom: string | null
+          sujet: string | null
+        }
+        Insert: {
+          courriel?: string | null
+          customerid: number
+          message?: string | null
+          nom?: string | null
+          sujet?: string | null
+        }
+        Update: {
+          courriel?: string | null
+          customerid?: number
+          message?: string | null
+          nom?: string | null
+          sujet?: string | null
         }
         Relationships: []
       }

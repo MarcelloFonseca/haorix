@@ -5,6 +5,8 @@ import { ChevronLeft, ChevronRight, HelpCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { michroma } from '@/Fonts/Michroma'
 import { montserrat } from '@/Fonts/Montserrat'
+import { QuickQuestionModal } from './QuestionForm';
+
 
 const faqItems = [
   {
@@ -155,15 +157,10 @@ export function FAQ() {
         </div>
 
         <div className="mt-8 text-center p-8">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground mb-2">
             Vous n{"'"}avez pas trouvé votre réponse ?{' '}
-            <a
-              href="/contact"
-              className={`${michroma.className} font-medium text-foreground underline-offset-4 hover:underline`}
-            >
-              Contactez-nous
-            </a>
           </p>
+          <QuickQuestionModal />
         </div>
       </div>
     </section>

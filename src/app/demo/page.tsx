@@ -17,7 +17,7 @@ import { michroma } from '@/Fonts/Michroma'
 import { montserrat } from '@/Fonts/Montserrat'
 import { addData } from '@/DB/api'
 
-import { ConfirmationPage } from '@/app/Regular-Components/confirmation'
+import { ConfirmationPage } from '@/app/Regular-Components/Confirmation'
 
 type industriesType = string[];
 

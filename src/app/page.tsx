@@ -144,10 +144,10 @@ function Home(): ReactElement {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
-                <button className="px-6 sm:px-8 py-3 bg-black text-white hover:bg-zinc-800 rounded-lg text-sm sm:text-base font-medium transition-colors w-full sm:w-auto dark:bg-white dark:text-black dark:hover:bg-zinc-200">
+                <button className="px-6 sm:px-8 py-3 bg-black text-white hover:bg-zinc-800 rounded-lg text-sm sm:text-base font-medium transition-colors w-full sm:w-auto dark:bg-white dark:text-black dark:hover:bg-zinc-200 lg:cursor-pointer">
                   Voir H-Viz
                 </button>
-                <button className="px-6 sm:px-8 py-3 border border-zinc-300 hover:bg-zinc-100 rounded-lg text-sm sm:text-base font-medium transition-colors w-full sm:w-auto text-zinc-900 dark:text-white dark:border-zinc-700 dark:hover:bg-zinc-800">
+                <button className="px-6 sm:px-8 py-3 border border-zinc-300 hover:bg-zinc-100 rounded-lg text-sm sm:text-base font-medium transition-colors w-full sm:w-auto text-zinc-900 dark:text-white dark:border-zinc-700 dark:hover:bg-zinc-800 lg:cursor-pointer">
                   Parler à un expert
                 </button>
               </div>
