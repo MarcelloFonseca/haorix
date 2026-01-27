@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { ReactElement } from 'react';
 import type { Metadata } from 'next';
 import { ThemeProvider } from './theme-provider';
-import { Footer } from './Regular-Components/footer';
-import { NavBar } from './Regular-Components/Navbar';
+import { Footer } from './RegularComponents/footer';
+import { NavBar } from './RegularComponents/Navbar';
 
 //FAIT:(Tablette)
 //TODO: Résoudre le probème pour lorsque le breakpoint est un peu plus gros que md (entre md et lg)

@@ -5,13 +5,13 @@ import { CheckCircle } from 'lucide-react';
 import { michroma } from '@/Fonts/Michroma';
 import { montserrat } from '@/Fonts/Montserrat';
 import { useMediaQuery } from 'react-responsive';
-import { FAQ } from './Regular-Components/faq';
-import { Timeline } from './Regular-Components/Timeline';
-import { HDash } from './Regular-Components/H-Dash-Model';
-import { ModelLayout } from './Regular-Components/Model-Layout';
-import { FeaturesSection } from './Regular-Components/FeatureSection';
-import { EnterpriseSection } from './Regular-Components/EntrepriseSection';
-import { HowItWorksSection } from './Regular-Components/HowItWorksSection';
+import { FAQ } from './RegularComponents/faq';
+import { Timeline } from './RegularComponents/Timeline';
+import { HDash } from './RegularComponents/H-Dash-Model';
+import { ModelLayout } from './RegularComponents/Model-Layout';
+import { FeaturesSection } from './RegularComponents/FeatureSection';
+import { EnterpriseSection } from './RegularComponents/EntrepriseSection';
+import { HowItWorksSection } from './RegularComponents/HowItWorksSection';
 
 interface Responsiveness {
   isMobile: boolean & { query?: string };
