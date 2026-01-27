@@ -34,7 +34,7 @@ function HowItWorksSection(): ReactElement {
         </div>
 
         <div className="space-y-16 md:space-y-24 lg:space-y-32">
-          {/* STEP 01 */}
+         
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start lg:items-center">
             <div className="space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-3 justify-center lg:justify-start">
@@ -138,7 +138,7 @@ function HowItWorksSection(): ReactElement {
 
           {/* STEP 02 */}
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start lg:items-center">
-            <div className="lg:order-1 relative w-full max-w-xl lg:max-w-none mx-auto">
+            <div className="order-2 lg:order-1 relative w-full max-w-xl lg:max-w-none mx-auto">
               <div className="rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-none p-6 space-y-4">
                 <div className="flex items-center justify-between pb-4 border-b border-zinc-200 dark:border-zinc-800">
                   <h4 className={`${michroma.className} text-base font-semibold text-black dark:text-white`}>Configuration du poste</h4>
@@ -201,7 +201,7 @@ function HowItWorksSection(): ReactElement {
               </div>
             </div>
 
-            <div className="space-y-6 lg:order-2 text-center lg:text-left">
+            <div className=" order-1 space-y-6 lg:order-2 text-center lg:text-left">
               <div className="inline-flex items-center gap-3 justify-center lg:justify-start">
                 <div className="w-14 h-14 rounded-xl bg-zinc-100 dark:bg-white/5 border border-zinc-300 dark:border-zinc-700 flex items-center justify-center">
                   <span className={`${michroma.className} text-xl font-bold text-black dark:text-white`}>02</span>
