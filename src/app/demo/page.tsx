@@ -12,8 +12,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { ConfirmationPage } from '../Regular-Components/Confirmation';
-import { CheckCircle2, Users, Zap, Shield, Clock, Workflow } from 'lucide-react'
+import { ConfirmationPage } from '../Regular-Components/Confirmation'
+import { Users, Zap, Shield, Clock, Workflow } from 'lucide-react'
 import { michroma } from '@/Fonts/Michroma'
 import { montserrat } from '@/Fonts/Montserrat'
 import { addData } from '@/DB/api'
@@ -74,40 +74,7 @@ export default function ContactForm() {
     await addData({ data: formData });
     setIsSubmitted(true)  
   }
-
-  if (isSubmitted) {
-    return (
-      <section className={`w-full px-4 py-16 md:py-24 ${montserrat.className}`}>
-        <div className="mx-auto max-w-md text-center">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-zinc-900/10 dark:bg-white/10">
-            <CheckCircle2 className="h-8 w-8 text-zinc-900 dark:text-white" />
-          </div>
-          <h2 className={`${michroma.className} text-2xl font-bold text-foreground`}>
-            Merci pour votre demande
-          </h2>
-          <p className="mt-3 text-muted-foreground">
-            Notre équipe vous contactera sous peu pour planifier la prochaine étape.
-          </p>
-          <div className="mt-6 flex flex-col gap-3">
-            <Button
-              className="bg-transparent"
-              variant="outline"
-              onClick={() => setIsSubmitted(false)}
-            >
-              Envoyer une autre demande
-            </Button>
-            <Button
-              asChild
-              className={`${michroma.className} bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200`}
-            >
-              <Link href="/">Retournez à l’accueil</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    )
-  }
-
+  
   return (
     (isSubmitted && (
       <ConfirmationPage />
