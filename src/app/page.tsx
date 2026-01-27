@@ -1,17 +1,17 @@
 'use client';
 
 import { ReactElement } from 'react';
+import { CheckCircle } from 'lucide-react';
 import { michroma } from '@/Fonts/Michroma';
 import { montserrat } from '@/Fonts/Montserrat';
 import { useMediaQuery } from 'react-responsive';
-import { CheckCircle } from 'lucide-react';
+import { FAQ } from './Regular-Components/faq';
 import { Timeline } from './Regular-Components/Timeline';
 import { HDash } from './Regular-Components/H-Dash-Model';
 import { ModelLayout } from './Regular-Components/Model-Layout';
 import { FeaturesSection } from './Regular-Components/FeatureSection';
 import { EnterpriseSection } from './Regular-Components/EntrepriseSection';
 import { HowItWorksSection } from './Regular-Components/HowItWorksSection';
-import { FAQ } from './Regular-Components/faq';
 
 interface Responsiveness {
   isMobile: boolean & { query?: string };

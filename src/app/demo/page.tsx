@@ -12,12 +12,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { ConfirmationPage } from '@/app/Regular-Components/Confirmation';
 import { CheckCircle2, Users, Zap, Shield, Clock, Workflow } from 'lucide-react'
 import { michroma } from '@/Fonts/Michroma'
 import { montserrat } from '@/Fonts/Montserrat'
 import { addData } from '@/DB/api'
-
-import { ConfirmationPage } from '@/app/Regular-Components/Confirmation'
 
 type industriesType = string[];
 
