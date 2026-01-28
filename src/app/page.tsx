@@ -96,7 +96,6 @@ function Home(): ReactElement {
     ),
   },
 ]
-throw new Error('Test erreur 500')
   return (
     <div className="relative bg-[var(--backgroundV2)] dark:bg-popover w-full min-h-screen overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
