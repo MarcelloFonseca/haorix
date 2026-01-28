@@ -110,7 +110,7 @@ export default function NotFound() {
           Page introuvable
         </h1>
         <p className="max-w-md text-muted-foreground">
-          Cette page n’existe pas (ou a été déplacée). Revenez à l’accueil ou retournez à la page précédente.
+          Cette page n’existe pas (ou a été déplacée). Revenez à l’accueil.
         </p>
       </div>
 
@@ -123,13 +123,6 @@ export default function NotFound() {
           <Link href="/">
             <Home className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
             Retour à l’accueil
-          </Link>
-        </Button>
-
-        <Button asChild variant="outline" size="lg" className="group bg-transparent">
-          <Link href="javascript:history.back()">
-            <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-            Page précédente
           </Link>
         </Button>
       </div>
