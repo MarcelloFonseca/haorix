@@ -12,7 +12,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 
 type SubItem = { href: string; label: string };
 type NavItem = { 
-  href: string; 
+  href: string;
   label: string; 
   subItems?: SubItem[];
 };
@@ -22,9 +22,9 @@ const navLinks: NavItem[] = [
     href: '#', 
     label: 'Produits',
     subItems: [
-      { href: '#', label: 'H-Viz' },
+      { href: '/produits/h-viz', label: 'H-Viz' },
       { href: '#', label: 'H-Dash' },
-      { href: '#', label: 'Accessoires & Add-ons' },
+      { href: '/produits/accessoires-add-ons', label: 'Accessoires & Add-ons' },
     ]
   },
   { 
@@ -56,46 +56,34 @@ function NavBar(): ReactElement {
 
   return (
     <>
-  
       <NavigationMenu viewport={false} className="hidden lg:flex lg:w-full lg:ml-2.5">
         <NavigationMenuList className="flex w-full flex-row items-center space-x-6">
-          <NavigationMenuItem className={michroma.className}>
-            <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
-              Produits
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>H-Viz</NavigationMenuLink>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>H-Dash</NavigationMenuLink>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Accessoires & Add-ons</NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem className={michroma.className}>
-            <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
-              Solutions
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Exécution au poste (MES)</NavigationMenuLink>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Traçabilité (QR / RFID)</NavigationMenuLink>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Andon & signalisation</NavigationMenuLink>
-              <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>Instructions 2D/3D & qualité</NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-
-          <NavigationMenuLink 
-            className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
-            Comment ça marche
-          </NavigationMenuLink>
-
-          <NavigationMenuLink 
-            className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
-            Prix
-          </NavigationMenuLink>
-
-          <NavigationMenuLink
-            className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
-            Ressources
-          </NavigationMenuLink>
+          {navLinks.map((link) => (
+            <NavigationMenuItem key={link.label} className={michroma.className}>
+              {link.subItems ? (
+                <>
+                  <NavigationMenuTrigger className="rounded-xs cursor-pointer dark:bg-secondary/80">
+                    {link.label}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    {link.subItems.map((subItem) => (
+                      <Link key={subItem.label} href={subItem.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
+                          {subItem.label}
+                        </NavigationMenuLink>
+                      </Link>
+                    ))}
+                  </NavigationMenuContent>
+                </>
+              ) : (
+                <Link href={link.href} legacyBehavior passHref>
+                  <NavigationMenuLink className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
+                    {link.label}
+                  </NavigationMenuLink>
+                </Link>
+              )}
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
 
