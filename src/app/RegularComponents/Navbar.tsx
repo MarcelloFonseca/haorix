@@ -23,8 +23,7 @@ const navLinks: NavItem[] = [
     label: 'Produits',
     subItems: [
       { href: '/produits/h-viz', label: 'H-Viz' },
-      { href: '#', label: 'H-Dash' },
-      { href: '/produits/accessoires-add-ons', label: 'Accessoires & Add-ons' },
+      { href: '/produits/accessoires&add-ons', label: 'Accessoires & Add-ons' },
     ]
   },
   { 
@@ -67,20 +66,20 @@ function NavBar(): ReactElement {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     {link.subItems.map((subItem) => (
-                      <Link key={subItem.label} href={subItem.href} legacyBehavior passHref>
-                        <NavigationMenuLink className={`${montserrat.className} cursor-pointer`}>
+                      <NavigationMenuLink key={subItem.label} asChild>
+                        <Link href={subItem.href} className={`${montserrat.className} cursor-pointer`}>
                           {subItem.label}
-                        </NavigationMenuLink>
-                      </Link>
+                        </Link>
+                      </NavigationMenuLink>
                     ))}
                   </NavigationMenuContent>
                 </>
               ) : (
-                <Link href={link.href} legacyBehavior passHref>
-                  <NavigationMenuLink className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
+                <NavigationMenuLink asChild>
+                  <Link href={link.href} className={`${michroma.className} cursor-pointer bg-inherit dark:bg-secondary/80 dark:text-primary`}>
                     {link.label}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               )}
             </NavigationMenuItem>
           ))}

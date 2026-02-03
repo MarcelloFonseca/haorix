@@ -1,14 +1,14 @@
 'use client'
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { michroma } from '@/Fonts/Michroma';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { montserrat } from '@/Fonts/Montserrat';
-import React, { useMemo, useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Check, QrCode, Rss, BellRing, Cable, ChevronRight } from 'lucide-react';
+import Link from 'next/link'
+import Image from 'next/image'
+import { michroma } from '@/Fonts/Michroma'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { montserrat } from '@/Fonts/Montserrat'
+import React, { useMemo, useRef, useState } from 'react'
+import { Card, CardContent } from '@/components/ui/card'
+import { ArrowRight, Check, QrCode, Rss, BellRing, Cable, ChevronRight } from 'lucide-react'
 
 interface Accessory {
   id: string
@@ -98,6 +98,7 @@ const accessories: Accessory[] = [
 
 export default function AccessoriesPage() {
   const [selectedAccessory, setSelectedAccessory] = useState<Accessory>(accessories[0])
+  const detailsRef = useRef<HTMLElement | null>(null)
 
   const selectedIndex = useMemo(
     () => accessories.findIndex((a) => a.id === selectedAccessory.id),
@@ -117,11 +118,16 @@ export default function AccessoriesPage() {
         />
 
         <div className="mx-auto max-w-7xl px-4 py-16 text-center md:py-24 lg:px-8">
-          <Badge variant="secondary" className={`${michroma.className} mb-4 px-3 py-1 text-xs uppercase tracking-wider`}>
+          <Badge
+            variant="secondary"
+            className={`${michroma.className} mb-4 px-3 py-1 text-xs uppercase tracking-wider`}
+          >
             Accessoires
           </Badge>
 
-          <h1 className={`${michroma.className} text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl`}>
+          <h1
+            className={`${michroma.className} text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-tight`}
+          >
             Accessoires & Add-ons
           </h1>
 
@@ -136,7 +142,10 @@ export default function AccessoriesPage() {
         </div>
       </section>
 
-      <section className="border-b border-border/30 py-16 lg:py-24">
+      <section
+        ref={detailsRef as unknown as React.RefObject<HTMLElement>}
+        className="border-b border-border/30 py-16 lg:py-24"
+      >
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-5">
@@ -145,7 +154,7 @@ export default function AccessoriesPage() {
               </h2>
 
               <div className="space-y-3">
-                {accessories.map((accessory, idx) => {
+                {accessories.map((accessory) => {
                   const active = selectedAccessory.id === accessory.id
                   return (
                     <button
@@ -165,12 +174,12 @@ export default function AccessoriesPage() {
                             : 'bg-muted text-muted-foreground group-hover:bg-zinc-900/10 dark:group-hover:bg-white/10 group-hover:text-foreground'
                         }`}
                       >
-                        {accessory.icon}
+                        <span className="h-6 w-6 [&>svg]:h-6 [&>svg]:w-6">{accessory.icon}</span>
                       </div>
 
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className={`${michroma.className} font-semibold text-foreground truncate`}>
+                          <span className={`${michroma.className} font-semibold text-foreground truncate leading-tight`}>
                             {accessory.name}
                           </span>
                           {accessory.badge && (
@@ -203,13 +212,15 @@ export default function AccessoriesPage() {
                   <div className="grid gap-6 sm:grid-cols-[96px_1fr] sm:items-start">
                     <div className="flex items-center gap-4 sm:flex-col sm:items-start">
                       <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-zinc-900 text-white dark:bg-white dark:text-black sm:h-24 sm:w-24">
-                        {selectedAccessory.icon}
+                        <span className="h-10 w-10 [&>svg]:h-10 [&>svg]:w-10">{selectedAccessory.icon}</span>
                       </div>
                     </div>
 
-                    <div>
+                    <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2">
-                        <h3 className={`${michroma.className} text-2xl font-bold text-foreground sm:text-3xl`}>
+                        <h3
+                          className={`${michroma.className} text-2xl font-bold text-foreground sm:text-3xl leading-tight break-words`}
+                        >
                           {selectedAccessory.name}
                         </h3>
                         {selectedAccessory.badge && (
@@ -234,7 +245,7 @@ export default function AccessoriesPage() {
                             alt={selectedAccessory.imageAlt}
                             fill
                             sizes="(min-width: 1024px) 720px, 100vw"
-                            className="object-cover"
+                            className="object-cover object-center"
                             priority={selectedAccessory.id === accessories[0].id}
                           />
                         </div>
@@ -269,10 +280,10 @@ export default function AccessoriesPage() {
                         {selectedAccessory.specs.map((spec, index) => (
                           <div
                             key={index}
-                            className="flex items-center justify-between rounded-lg bg-muted/40 px-3 py-2"
+                            className="flex items-center justify-between gap-4 rounded-lg bg-muted/40 px-3 py-2"
                           >
                             <span className="text-sm text-muted-foreground">{spec.label}</span>
-                            <span className={`${michroma.className} text-sm font-medium text-foreground`}>
+                            <span className={`${michroma.className} text-sm font-medium text-foreground text-right`}>
                               {spec.value}
                             </span>
                           </div>
@@ -320,7 +331,7 @@ export default function AccessoriesPage() {
                 className="group cursor-pointer border-border transition-all hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-lg"
                 onClick={() => {
                   setSelectedAccessory(accessory)
-                  window.scrollTo({ top: 420, behavior: 'smooth' })
+                  detailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }}
               >
                 <CardContent className="p-6">
@@ -331,23 +342,27 @@ export default function AccessoriesPage() {
                         alt={accessory.imageAlt}
                         fill
                         sizes="(min-width: 1024px) 240px, 50vw"
-                        className="object-cover"
+                        className="object-cover object-center"
                       />
                     </div>
                   </div>
 
-                  {accessory.badge && (
-                    <Badge variant="secondary" className="mb-2 text-xs">
-                      {accessory.badge}
-                    </Badge>
-                  )}
+                  <div className="mb-2 h-6">
+                    {accessory.badge ? (
+                      <Badge variant="secondary" className="text-xs">
+                        {accessory.badge}
+                      </Badge>
+                    ) : (
+                      <span className="inline-block h-6" />
+                    )}
+                  </div>
 
                   <div className="mb-3 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-muted-foreground">
-                      {accessory.icon}
+                      <span className="h-5 w-5 [&>svg]:h-5 [&>svg]:w-5">{accessory.icon}</span>
                     </div>
                     <div className="min-w-0">
-                      <h3 className={`${michroma.className} font-semibold text-foreground truncate`}>
+                      <h3 className={`${michroma.className} font-semibold text-foreground truncate leading-tight`}>
                         {accessory.name}
                       </h3>
                       <p className="mt-0.5 text-sm text-muted-foreground truncate">{accessory.tagline}</p>
