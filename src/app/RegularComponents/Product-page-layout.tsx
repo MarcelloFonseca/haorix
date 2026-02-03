@@ -3,7 +3,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Badge } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { Badge } from '@/components/ui/badge'
 
 export interface ProductFeature {
   icon: ReactNode
@@ -47,9 +48,9 @@ export function ProductPageLayout({
 }: ProductPageProps) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      {/* Hero Section */}
+      
       <section className="relative overflow-hidden border-b border-border">
-        {/* Background grid */}
+      
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.03]"
           style={{
@@ -59,10 +60,10 @@ export function ProductPageLayout({
         />
 
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-4 py-20 md:flex-row md:py-28 lg:gap-20 lg:px-8">
-          {/* Content */}
+          
           <div className="flex flex-1 flex-col items-center text-center md:items-start md:text-left">
             {badge && (
-              <Badge variant="secondary" className="mb-4 px-3 py-1 text-xs font-medium uppercase tracking-wider">
+              <Badge variant={'secondary'} className="mb-4 px-3 py-1 text-xs font-medium uppercase tracking-wider">
                 {badge}
               </Badge>
             )}
@@ -85,10 +86,10 @@ export function ProductPageLayout({
             </div>
           </div>
 
-          {/* Product Image Placeholder */}
+          
           <div className="relative flex flex-1 items-center justify-center">
             <div className="relative aspect-square w-full max-w-md">
-              {/* Decorative elements */}
+            
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent" />
               <div className="absolute inset-0 rounded-2xl border border-border bg-card shadow-xl">
                 {productImage ? (
@@ -99,7 +100,7 @@ export function ProductPageLayout({
                   </div>
                 )}
               </div>
-              {/* Corner accents */}
+              
               <div className="absolute -left-2 -top-2 h-8 w-8 border-l-2 border-t-2 border-primary" />
               <div className="absolute -bottom-2 -right-2 h-8 w-8 border-b-2 border-r-2 border-primary" />
             </div>
@@ -107,7 +108,6 @@ export function ProductPageLayout({
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="border-b border-border py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mb-16 text-center">
@@ -136,11 +136,11 @@ export function ProductPageLayout({
         </div>
       </section>
 
-      {/* Specs & Highlights Section */}
+    
       <section className="border-b border-border py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2">
-            {/* Specifications */}
+            
             <div>
               <h2 className="mb-8 text-2xl font-bold tracking-tight text-foreground">Specifications techniques</h2>
               <div className="divide-y divide-border rounded-xl border border-border bg-card">
@@ -153,7 +153,6 @@ export function ProductPageLayout({
               </div>
             </div>
 
-            {/* Highlights */}
             <div>
               <h2 className="mb-8 text-2xl font-bold tracking-tight text-foreground">Points forts</h2>
               <div className="space-y-4">
@@ -171,11 +170,10 @@ export function ProductPageLayout({
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl bg-primary px-8 py-16 text-center sm:px-16">
-            {/* Decorative grid */}
+        
             <div
               className="pointer-events-none absolute inset-0 opacity-10"
               style={{
