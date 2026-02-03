@@ -183,7 +183,7 @@ export default function AccessoriesPage() {
                             {accessory.name}
                           </span>
                           {accessory.badge && (
-                            <Badge variant="secondary" className="shrink-0 text-xs">
+                            <Badge variant={'secondary'} className="shrink-0 text-xs">
                               {accessory.badge}
                             </Badge>
                           )}
@@ -349,7 +349,7 @@ export default function AccessoriesPage() {
 
                   <div className="mb-2 h-6">
                     {accessory.badge ? (
-                      <Badge variant="secondary" className="text-xs">
+                      <Badge variant={'secondary'} className="text-xs">
                         {accessory.badge}
                       </Badge>
                     ) : (
