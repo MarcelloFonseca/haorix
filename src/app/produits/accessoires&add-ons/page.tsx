@@ -30,7 +30,7 @@ const accessories: Accessory[] = [
     name: 'Lecteur Code-barres / QR',
     tagline: 'Scan rapide, exécution fluide',
     description:
-      "Accélérez l’exécution au poste avec un lecteur sans fil. Moins de saisie manuelle, moins d’erreurs, plus de fluidité sur le plancher.",
+      "Accélérez l'exécution au poste avec un lecteur sans fil. Moins de saisie manuelle, moins d'erreurs, plus de fluidité sur le plancher.",
     badge: 'Populaire',
     imageSrc: '/accessoires/qr-scanner.png',
     imageAlt: 'Lecteur code-barres / QR HAORIX',
@@ -48,7 +48,7 @@ const accessories: Accessory[] = [
     name: 'Module RFID',
     tagline: 'Traçabilité instantanée',
     description:
-      "Identifiez rapidement l’utilisateur au poste via un tag RFID pour faciliter l’attribution des tâches, le suivi et la traçabilité en usine.",
+      "Identifiez rapidement l'utilisateur au poste via un tag RFID pour faciliter l'attribution des tâches, le suivi et la traçabilité en usine.",
     imageSrc: '/accessoires/rfid-module.png',
     imageAlt: 'Module RFID HAORIX',
     features: ['Lecture tags magnétiques', 'Identification opérateur', 'Suivi en temps réel', 'Intégration traçabilité'],
@@ -65,7 +65,7 @@ const accessories: Accessory[] = [
     name: 'Lumières Andon',
     tagline: 'Signalisation visuelle immédiate',
     description:
-      "Rendez l’état d’un poste visible en un coup d’œil (assistance, arrêt, qualité, manque matière). Améliorez la réactivité et la coordination d’équipe.",
+      "Rendez l'état d'un poste visible en un coup d'œil (assistance, arrêt, qualité, manque matière). Améliorez la réactivité et la coordination d'équipe.",
     badge: 'Nouveau',
     imageSrc: '/accessoires/andon-lights.png',
     imageAlt: 'Lumières Andon HAORIX',
@@ -83,7 +83,7 @@ const accessories: Accessory[] = [
     name: 'Modules connectique',
     tagline: 'Flexibilité réseau totale',
     description:
-      "Options de connexion adaptées à l’usine : WiFi pour la flexibilité ou Ethernet pour une stabilité maximale, selon vos zones et contraintes réseau.",
+      "Options de connexion adaptées à l'usine : WiFi pour la flexibilité ou Ethernet pour une stabilité maximale, selon vos zones et contraintes réseau.",
     imageSrc: '/accessoires/connectivity.png',
     imageAlt: 'Modules connectique HAORIX',
     features: ['Module WiFi industriel', 'Adaptateur Ethernet PoE', 'Hub USB multi-ports', 'Câbles industriels renforcés'],
@@ -106,7 +106,7 @@ export default function AccessoriesPage() {
   )
 
   return (
-    <div className={`flex min-h-screen flex-col bg-background ${montserrat.className}`}>
+    <div className={`flex min-h-screen flex-col bg-background overflow-x-hidden ${montserrat.className}`}>
       <section className="relative overflow-hidden border-b border-border/30">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -131,7 +131,7 @@ export default function AccessoriesPage() {
           </p>
 
           <p className="mx-auto mt-6 max-w-3xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            Optimisez H-Viz avec des add-ons conçus pour le plancher : lecture QR/code-barres, RFID pour la traçabilité et lumières Andon pour la signalisation. Une approche modulaire qui s’adapte à vos procédés.
+            Optimisez H-Viz avec des add-ons conçus pour le plancher : lecture QR/code-barres, RFID pour la traçabilité et lumières Andon pour la signalisation. Une approche modulaire qui s'adapte à vos procédés.
           </p>
         </div>
       </section>
@@ -201,44 +201,44 @@ export default function AccessoriesPage() {
               <div className="lg:col-span-7">
                 <Card className="overflow-hidden border-border">
                   <div className="relative border-b border-border bg-muted/20 p-6 sm:p-8">
-                    <div className="grid gap-6 sm:grid-cols-[96px_1fr] sm:items-start">
-                      <div className="flex items-center gap-4 sm:flex-col sm:items-start">
-                        <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-zinc-900 text-white dark:bg-white dark:text-black sm:h-24 sm:w-24">
-                          <span className="h-10 w-10 [&>svg]:h-10 [&>svg]:w-10">{selectedAccessory.icon}</span>
+                    <div className="flex flex-col gap-6">
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-zinc-900 text-white dark:bg-white dark:text-black sm:h-20 sm:w-20">
+                          <span className="h-8 w-8 [&>svg]:h-8 [&>svg]:w-8 sm:h-10 sm:w-10 sm:[&>svg]:h-10 sm:[&>svg]:w-10">{selectedAccessory.icon}</span>
+                        </div>
+
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <h3 className={`${michroma.className} text-xl font-bold text-foreground sm:text-2xl leading-tight`}>
+                              {selectedAccessory.name}
+                            </h3>
+                            {selectedAccessory.badge && (
+                              <Badge className="bg-zinc-900 text-white dark:bg-white dark:text-black">
+                                {selectedAccessory.badge}
+                              </Badge>
+                            )}
+                          </div>
+
+                          <p className="mt-1 text-base font-medium text-zinc-900 dark:text-white sm:text-lg">
+                            {selectedAccessory.tagline}
+                          </p>
                         </div>
                       </div>
 
-                      <div className="min-w-0">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h3 className={`${michroma.className} text-2xl font-bold text-foreground sm:text-3xl leading-tight break-words`}>
-                            {selectedAccessory.name}
-                          </h3>
-                          {selectedAccessory.badge && (
-                            <Badge className="bg-zinc-900 text-white dark:bg-white dark:text-black">
-                              {selectedAccessory.badge}
-                            </Badge>
-                          )}
-                        </div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {selectedAccessory.description}
+                      </p>
 
-                        <p className="mt-2 text-lg font-medium text-zinc-900 dark:text-white">
-                          {selectedAccessory.tagline}
-                        </p>
-
-                        <p className="mt-3 text-muted-foreground leading-relaxed">
-                          {selectedAccessory.description}
-                        </p>
-
-                        <div className="mt-5 overflow-hidden rounded-xl border border-border bg-background">
-                          <div className="relative aspect-[16/9] w-full">
-                            <Image
-                              src={selectedAccessory.imageSrc}
-                              alt={selectedAccessory.imageAlt}
-                              fill
-                              sizes="(min-width: 1024px) 720px, 100vw"
-                              className="object-cover object-center"
-                              priority={selectedAccessory.id === accessories[0].id}
-                            />
-                          </div>
+                      <div className="overflow-hidden rounded-xl border border-border bg-background">
+                        <div className="relative aspect-[16/9] w-full">
+                          <Image
+                            src={selectedAccessory.imageSrc}
+                            alt={selectedAccessory.imageAlt}
+                            fill
+                            sizes="(min-width: 1024px) 720px, 100vw"
+                            className="object-cover object-center"
+                            priority={selectedAccessory.id === accessories[0].id}
+                          />
                         </div>
                       </div>
                     </div>
@@ -274,7 +274,7 @@ export default function AccessoriesPage() {
                             >
                               <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                                 <span className="text-sm text-muted-foreground">{spec.label}</span>
-                                <span className={`${michroma.className} text-sm font-medium text-foreground sm:text-right break-words`}>
+                                <span className={`${michroma.className} text-sm font-medium text-foreground sm:text-right`}>
                                   {spec.value}
                                 </span>
                               </div>
@@ -313,7 +313,7 @@ export default function AccessoriesPage() {
               Tous les accessoires
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Une approche modulaire qui s’adapte à chaque poste.
+              Une approche modulaire qui s'adapte à chaque poste.
             </p>
           </div>
 
@@ -351,7 +351,7 @@ export default function AccessoriesPage() {
                   </div>
 
                   <div className="mb-3 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
                       <span className="h-5 w-5 [&>svg]:h-5 [&>svg]:w-5">{accessory.icon}</span>
                     </div>
                     <div className="min-w-0">
@@ -385,13 +385,13 @@ export default function AccessoriesPage() {
                 Pourquoi choisir nos accessoires ?
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Conçus pour un environnement manufacturier exigeant, nos accessoires s’intègrent parfaitement à H-Viz.
+                Conçus pour un environnement manufacturier exigeant, nos accessoires s'intègrent parfaitement à H-Viz.
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                "Accélère l’exécution des opérations",
+                "Accélère l'exécution des opérations",
                 "Réduit les erreurs de saisie",
                 "Traçabilité renforcée via RFID",
                 "Signalisation Andon immédiate",
@@ -412,7 +412,7 @@ export default function AccessoriesPage() {
 
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-card px-8 py-16 text-center sm:px-16">
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-card px-6 py-12 text-center sm:px-16 sm:py-16">
             <div
               className="pointer-events-none absolute inset-0 opacity-[0.06]"
               style={{
@@ -422,10 +422,10 @@ export default function AccessoriesPage() {
               }}
             />
             <div className="relative">
-              <h2 className={`${michroma.className} text-3xl font-bold tracking-tight text-foreground sm:text-4xl`}>
-                Besoin d’une configuration personnalisée ?
+              <h2 className={`${michroma.className} text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl`}>
+                Besoin d'une configuration personnalisée ?
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+              <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
                 Notre équipe vous aide à choisir les bons accessoires selon vos postes, vos procédés et vos priorités.
               </p>
 
