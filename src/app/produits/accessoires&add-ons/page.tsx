@@ -119,7 +119,7 @@ export default function AccessoriesPage() {
 
         <div className="mx-auto max-w-7xl px-4 py-16 text-center md:py-24 lg:px-8">
           <Badge
-            variant="secondary"
+            variant={'secondary'}
             className={`${michroma.className} mb-4 px-3 py-1 text-xs uppercase tracking-wider`}
           >
             Accessoires
