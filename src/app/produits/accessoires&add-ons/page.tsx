@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import React, { useMemo, useRef, useState } from 'react'
 import { michroma } from '@/Fonts/Michroma'
+import { montserrat } from '@/Fonts/Montserrat'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { montserrat } from '@/Fonts/Montserrat'
-import React, { useMemo, useRef, useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, Check, QrCode, Rss, BellRing, Cable, ChevronRight } from 'lucide-react'
 
@@ -98,7 +98,7 @@ const accessories: Accessory[] = [
 
 export default function AccessoriesPage() {
   const [selectedAccessory, setSelectedAccessory] = useState<Accessory>(accessories[0])
-  const detailsRef = useRef<HTMLElement | null>(null)
+  const detailsRef = useRef<HTMLDivElement | null>(null)
 
   const selectedIndex = useMemo(
     () => accessories.findIndex((a) => a.id === selectedAccessory.id),
@@ -118,16 +118,11 @@ export default function AccessoriesPage() {
         />
 
         <div className="mx-auto max-w-7xl px-4 py-16 text-center md:py-24 lg:px-8">
-          <Badge
-            variant={'secondary'}
-            className={`${michroma.className} mb-4 px-3 py-1 text-xs uppercase tracking-wider`}
-          >
+          <Badge variant="secondary" className={`${michroma.className} mb-4 px-3 py-1 text-xs uppercase tracking-wider`}>
             Accessoires
           </Badge>
 
-          <h1
-            className={`${michroma.className} text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-tight`}
-          >
+          <h1 className={`${michroma.className} text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-tight`}>
             Accessoires & Add-ons
           </h1>
 
@@ -136,182 +131,180 @@ export default function AccessoriesPage() {
           </p>
 
           <p className="mx-auto mt-6 max-w-3xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            Optimisez H-Viz avec des add-ons conçus pour le plancher : lecture QR/code-barres, RFID pour la traçabilité
-            et lumières Andon pour la signalisation. Une approche modulaire qui s’adapte à vos procédés.
+            Optimisez H-Viz avec des add-ons conçus pour le plancher : lecture QR/code-barres, RFID pour la traçabilité et lumières Andon pour la signalisation. Une approche modulaire qui s’adapte à vos procédés.
           </p>
         </div>
       </section>
 
-      <section
-        ref={detailsRef as unknown as React.RefObject<HTMLElement>}
-        className="border-b border-border/30 py-16 lg:py-24"
-      >
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-5">
-              <h2 className={`${michroma.className} mb-6 text-2xl font-bold tracking-tight text-foreground`}>
-                Nos accessoires
-              </h2>
+      <div ref={detailsRef}>
+        <section className="border-b border-border/30 py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+              <div className="lg:col-span-5">
+                <h2 className={`${michroma.className} mb-6 text-2xl font-bold tracking-tight text-foreground`}>
+                  Nos accessoires
+                </h2>
 
-              <div className="space-y-3">
-                {accessories.map((accessory) => {
-                  const active = selectedAccessory.id === accessory.id
-                  return (
-                    <button
-                      key={accessory.id}
-                      onClick={() => setSelectedAccessory(accessory)}
-                      className={`group flex w-full items-center gap-4 rounded-xl border p-4 text-left transition-all ${
-                        active
-                          ? 'border-zinc-900 bg-zinc-900/5 dark:border-white dark:bg-white/5'
-                          : 'border-border bg-card hover:border-zinc-400 dark:hover:border-zinc-600'
-                      }`}
-                      aria-current={active ? 'true' : 'false'}
-                    >
-                      <div
-                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors ${
+                <div className="space-y-3">
+                  {accessories.map((accessory) => {
+                    const active = selectedAccessory.id === accessory.id
+                    return (
+                      <button
+                        key={accessory.id}
+                        onClick={() => setSelectedAccessory(accessory)}
+                        className={`group flex w-full items-center gap-4 rounded-xl border p-4 text-left transition-all ${
                           active
-                            ? 'bg-zinc-900 text-white dark:bg-white dark:text-black'
-                            : 'bg-muted text-muted-foreground group-hover:bg-zinc-900/10 dark:group-hover:bg-white/10 group-hover:text-foreground'
+                            ? 'border-zinc-900 bg-zinc-900/5 dark:border-white dark:bg-white/5'
+                            : 'border-border bg-card hover:border-zinc-400 dark:hover:border-zinc-600'
                         }`}
+                        aria-current={active ? 'true' : 'false'}
                       >
-                        <span className="h-6 w-6 [&>svg]:h-6 [&>svg]:w-6">{accessory.icon}</span>
+                        <div
+                          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors ${
+                            active
+                              ? 'bg-zinc-900 text-white dark:bg-white dark:text-black'
+                              : 'bg-muted text-muted-foreground group-hover:bg-zinc-900/10 dark:group-hover:bg-white/10 group-hover:text-foreground'
+                          }`}
+                        >
+                          <span className="h-6 w-6 [&>svg]:h-6 [&>svg]:w-6">{accessory.icon}</span>
+                        </div>
+
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className={`${michroma.className} font-semibold text-foreground truncate leading-tight`}>
+                              {accessory.name}
+                            </span>
+                            {accessory.badge && (
+                              <Badge variant="secondary" className="shrink-0 text-xs">
+                                {accessory.badge}
+                              </Badge>
+                            )}
+                          </div>
+                          <p className="mt-1 text-sm text-muted-foreground truncate">{accessory.tagline}</p>
+                        </div>
+
+                        <ChevronRight
+                          className={`h-5 w-5 shrink-0 transition-transform ${
+                            active ? 'text-foreground rotate-90' : 'text-muted-foreground'
+                          }`}
+                        />
+                      </button>
+                    )
+                  })}
+                </div>
+
+                <div className="mt-6 text-sm text-muted-foreground">
+                  Sélection : <span className="text-foreground font-medium">{selectedIndex + 1}</span> / {accessories.length}
+                </div>
+              </div>
+
+              <div className="lg:col-span-7">
+                <Card className="overflow-hidden border-border">
+                  <div className="relative border-b border-border bg-muted/20 p-6 sm:p-8">
+                    <div className="grid gap-6 sm:grid-cols-[96px_1fr] sm:items-start">
+                      <div className="flex items-center gap-4 sm:flex-col sm:items-start">
+                        <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-zinc-900 text-white dark:bg-white dark:text-black sm:h-24 sm:w-24">
+                          <span className="h-10 w-10 [&>svg]:h-10 [&>svg]:w-10">{selectedAccessory.icon}</span>
+                        </div>
                       </div>
 
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2">
-                          <span className={`${michroma.className} font-semibold text-foreground truncate leading-tight`}>
-                            {accessory.name}
-                          </span>
-                          {accessory.badge && (
-                            <Badge variant={'secondary'} className="shrink-0 text-xs">
-                              {accessory.badge}
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className={`${michroma.className} text-2xl font-bold text-foreground sm:text-3xl leading-tight break-words`}>
+                            {selectedAccessory.name}
+                          </h3>
+                          {selectedAccessory.badge && (
+                            <Badge className="bg-zinc-900 text-white dark:bg-white dark:text-black">
+                              {selectedAccessory.badge}
                             </Badge>
                           )}
                         </div>
-                        <p className="mt-1 text-sm text-muted-foreground truncate">{accessory.tagline}</p>
-                      </div>
 
-                      <ChevronRight
-                        className={`h-5 w-5 shrink-0 transition-transform ${
-                          active ? 'text-foreground rotate-90' : 'text-muted-foreground'
-                        }`}
-                      />
-                    </button>
-                  )
-                })}
-              </div>
+                        <p className="mt-2 text-lg font-medium text-zinc-900 dark:text-white">
+                          {selectedAccessory.tagline}
+                        </p>
 
-              <div className="mt-6 text-sm text-muted-foreground">
-                Sélection : <span className="text-foreground font-medium">{selectedIndex + 1}</span> / {accessories.length}
-              </div>
-            </div>
+                        <p className="mt-3 text-muted-foreground leading-relaxed">
+                          {selectedAccessory.description}
+                        </p>
 
-            <div className="lg:col-span-7">
-              <Card className="overflow-hidden border-border">
-                <div className="relative border-b border-border bg-muted/20 p-6 sm:p-8">
-                  <div className="grid gap-6 sm:grid-cols-[96px_1fr] sm:items-start">
-                    <div className="flex items-center gap-4 sm:flex-col sm:items-start">
-                      <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-zinc-900 text-white dark:bg-white dark:text-black sm:h-24 sm:w-24">
-                        <span className="h-10 w-10 [&>svg]:h-10 [&>svg]:w-10">{selectedAccessory.icon}</span>
-                      </div>
-                    </div>
-
-                    <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h3
-                          className={`${michroma.className} text-2xl font-bold text-foreground sm:text-3xl leading-tight break-words`}
-                        >
-                          {selectedAccessory.name}
-                        </h3>
-                        {selectedAccessory.badge && (
-                          <Badge className="bg-zinc-900 text-white dark:bg-white dark:text-black">
-                            {selectedAccessory.badge}
-                          </Badge>
-                        )}
-                      </div>
-
-                      <p className="mt-2 text-lg font-medium text-zinc-900 dark:text-white">
-                        {selectedAccessory.tagline}
-                      </p>
-
-                      <p className="mt-3 text-muted-foreground leading-relaxed">
-                        {selectedAccessory.description}
-                      </p>
-
-                      <div className="mt-5 overflow-hidden rounded-xl border border-border bg-background">
-                        <div className="relative aspect-[16/9] w-full">
-                          <Image
-                            src={selectedAccessory.imageSrc}
-                            alt={selectedAccessory.imageAlt}
-                            fill
-                            sizes="(min-width: 1024px) 720px, 100vw"
-                            className="object-cover object-center"
-                            priority={selectedAccessory.id === accessories[0].id}
-                          />
+                        <div className="mt-5 overflow-hidden rounded-xl border border-border bg-background">
+                          <div className="relative aspect-[16/9] w-full">
+                            <Image
+                              src={selectedAccessory.imageSrc}
+                              alt={selectedAccessory.imageAlt}
+                              fill
+                              sizes="(min-width: 1024px) 720px, 100vw"
+                              className="object-cover object-center"
+                              priority={selectedAccessory.id === accessories[0].id}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <CardContent className="p-6 sm:p-8">
-                  <div className="grid gap-8 md:grid-cols-2">
-                    <div>
-                      <h4 className={`${michroma.className} mb-4 font-semibold text-foreground`}>
-                        Caractéristiques
-                      </h4>
-                      <ul className="space-y-3">
-                        {selectedAccessory.features.map((feature, index) => (
-                          <li key={index} className="flex items-start gap-3">
-                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900/10 dark:bg-white/10">
-                              <Check className="h-3 w-3 text-foreground" />
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="grid gap-8 md:grid-cols-2">
+                      <div>
+                        <h4 className={`${michroma.className} mb-4 font-semibold text-foreground`}>
+                          Caractéristiques
+                        </h4>
+                        <ul className="space-y-3">
+                          {selectedAccessory.features.map((feature, index) => (
+                            <li key={index} className="flex items-start gap-3">
+                              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-900/10 dark:bg-white/10">
+                                <Check className="h-3 w-3 text-foreground" />
+                              </div>
+                              <span className="text-sm text-muted-foreground">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className={`${michroma.className} mb-4 font-semibold text-foreground`}>
+                          Spécifications
+                        </h4>
+                        <div className="space-y-2">
+                          {selectedAccessory.specs.map((spec, index) => (
+                            <div
+                              key={index}
+                              className="rounded-lg bg-muted/40 px-3 py-2"
+                            >
+                              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                                <span className="text-sm text-muted-foreground">{spec.label}</span>
+                                <span className={`${michroma.className} text-sm font-medium text-foreground sm:text-right break-words`}>
+                                  {spec.value}
+                                </span>
+                              </div>
                             </div>
-                            <span className="text-sm text-muted-foreground">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className={`${michroma.className} mb-4 font-semibold text-foreground`}>
-                        Spécifications
-                      </h4>
-                      <div className="space-y-2">
-                        {selectedAccessory.specs.map((spec, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center justify-between gap-4 rounded-lg bg-muted/40 px-3 py-2"
-                          >
-                            <span className="text-sm text-muted-foreground">{spec.label}</span>
-                            <span className={`${michroma.className} text-sm font-medium text-foreground text-right`}>
-                              {spec.value}
-                            </span>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="mt-8 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row">
-                    <Button
-                      asChild
-                      className={`${michroma.className} gap-2 bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200`}
-                    >
-                      <Link href="/contact">
-                        Demander un devis
-                        <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                    <Button asChild variant="outline" className="bg-transparent">
-                      <Link href="/produits/h-viz">Voir H-Viz</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className="mt-8 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row">
+                      <Button
+                        asChild
+                        className={`${michroma.className} gap-2 bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200`}
+                      >
+                        <Link href="/contact">
+                          Demander un devis
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                      <Button asChild variant="outline" className="bg-transparent">
+                        <Link href="/produits/h-viz">Voir H-Viz</Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section className="border-b border-border/30 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -334,7 +327,7 @@ export default function AccessoriesPage() {
                   detailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }}
               >
-                <CardContent className="p-6">
+                <CardContent className="p-6 flex h-full flex-col">
                   <div className="mb-4 overflow-hidden rounded-xl border border-border bg-background">
                     <div className="relative aspect-[16/10] w-full">
                       <Image
@@ -349,7 +342,7 @@ export default function AccessoriesPage() {
 
                   <div className="mb-2 h-6">
                     {accessory.badge ? (
-                      <Badge variant={'secondary'} className="text-xs">
+                      <Badge variant="secondary" className="text-xs">
                         {accessory.badge}
                       </Badge>
                     ) : (
@@ -369,7 +362,7 @@ export default function AccessoriesPage() {
                     </div>
                   </div>
 
-                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+                  <p className="mt-2 line-clamp-3 text-sm text-muted-foreground flex-1">
                     {accessory.description}
                   </p>
 
