@@ -42,8 +42,8 @@ export function ProductPageLayout({
   features,
   specs,
   highlights,
-  ctaText = 'Commander maintenant',
-  ctaLink = '/contact',
+  ctaText = 'Demander une démo',
+  ctaLink = '/demo',
   secondaryCtaText = 'En savoir plus',
   secondaryCtaLink = '#features',
   productImage,
@@ -213,7 +213,7 @@ export function ProductPageLayout({
                 Prêt à passer à l’action ?
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                Contactez notre équipe pour obtenir un devis personnalisé et confirmer la meilleure configuration pour votre atelier.
+                Contactez notre équipe pour obtenir une démo et confirmer la meilleure configuration pour votre plancher de production.
               </p>
               <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
                 <Button
@@ -225,9 +225,6 @@ export function ProductPageLayout({
                     {ctaText}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="bg-transparent">
-                  <Link href="/contact">Demander une démo</Link>
                 </Button>
               </div>
             </div>

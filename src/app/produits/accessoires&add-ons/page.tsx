@@ -1,14 +1,14 @@
 'use client'
 
-import Link from 'next/link'
-import Image from 'next/image'
-import React, { useMemo, useRef, useState } from 'react'
-import { michroma } from '@/Fonts/Michroma'
-import { montserrat } from '@/Fonts/Montserrat'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { ArrowRight, Check, QrCode, Rss, BellRing, Cable, ChevronRight } from 'lucide-react'
+import Link from 'next/link';
+import Image from 'next/image';
+import { michroma } from '@/Fonts/Michroma';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { montserrat } from '@/Fonts/Montserrat';
+import { Card, CardContent } from '@/components/ui/card';
+import React, { useMemo, useRef, useState } from 'react';
+import { ArrowRight, Check, QrCode, Rss, BellRing, Cable, ChevronRight } from 'lucide-react';
 
 interface Accessory {
   id: string
@@ -107,7 +107,7 @@ export default function AccessoriesPage() {
 
   return (
     <div className={`flex min-h-screen flex-col bg-background overflow-x-hidden ${montserrat.className}`}>
-      {/* Hero Section */}
+      
       <section className="relative overflow-hidden border-b border-border/30">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -137,12 +137,12 @@ export default function AccessoriesPage() {
         </div>
       </section>
 
-      {/* Main Content Section */}
+  
       <div ref={detailsRef}>
         <section className="border-b border-border/30 py-12 sm:py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
-              {/* Accessory List */}
+            
               <div className="lg:col-span-5">
                 <h2 className={`${michroma.className} mb-4 text-xl font-bold tracking-tight text-foreground sm:mb-6 sm:text-2xl`}>
                   Nos accessoires
@@ -201,12 +201,11 @@ export default function AccessoriesPage() {
                 </div>
               </div>
 
-              {/* Accessory Details */}
               <div className="lg:col-span-7">
                 <Card className="overflow-hidden border-border">
                   <div className="relative border-b border-border bg-muted/20 p-4 sm:p-6 md:p-8">
                     <div className="flex flex-col gap-4 sm:gap-6">
-                      {/* Header with icon and title */}
+                      
                       <div className="flex items-start gap-3 sm:gap-4">
                         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white dark:bg-white dark:text-black sm:h-16 sm:w-16 sm:rounded-2xl md:h-20 md:w-20">
                           <span className="h-6 w-6 [&>svg]:h-6 [&>svg]:w-6 sm:h-8 sm:w-8 sm:[&>svg]:h-8 sm:[&>svg]:w-8 md:h-10 md:w-10 md:[&>svg]:h-10 md:[&>svg]:w-10">{selectedAccessory.icon}</span>
@@ -234,7 +233,6 @@ export default function AccessoriesPage() {
                         {selectedAccessory.description}
                       </p>
 
-                      {/* Image */}
                       <div className="overflow-hidden rounded-lg border border-border bg-background sm:rounded-xl">
                         <div className="relative aspect-[4/3] w-full sm:aspect-[16/9]">
                           <Image
@@ -252,7 +250,7 @@ export default function AccessoriesPage() {
 
                   <CardContent className="p-4 sm:p-6 md:p-8">
                     <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-                      {/* Features */}
+            
                       <div>
                         <h4 className={`${michroma.className} mb-3 text-sm font-semibold text-foreground sm:mb-4 sm:text-base`}>
                           Caractéristiques
@@ -269,7 +267,7 @@ export default function AccessoriesPage() {
                         </ul>
                       </div>
 
-                      {/* Specs */}
+                      
                       <div>
                         <h4 className={`${michroma.className} mb-3 text-sm font-semibold text-foreground sm:mb-4 sm:text-base`}>
                           Spécifications
@@ -292,15 +290,14 @@ export default function AccessoriesPage() {
                       </div>
                     </div>
 
-                    {/* CTA Buttons */}
                     <div className="mt-6 flex flex-col gap-2 border-t border-border pt-4 sm:mt-8 sm:flex-row sm:gap-3 sm:pt-6">
                       <Button
                         asChild
                         size="default"
                         className={`${michroma.className} gap-2 bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 text-sm sm:text-base`}
                       >
-                        <Link href="/contact">
-                          Demander un devis
+                        <Link href="/demo">
+                          Demander une démo
                           <ArrowRight className="h-4 w-4" />
                         </Link>
                       </Button>
@@ -316,7 +313,6 @@ export default function AccessoriesPage() {
         </section>
       </div>
 
-      {/* All Accessories Grid Section */}
       <section className="border-b border-border/30 py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mb-8 text-center sm:mb-12">
@@ -339,7 +335,7 @@ export default function AccessoriesPage() {
                 }}
               >
                 <CardContent className="p-4 sm:p-6 flex h-full flex-col">
-                  {/* Card Image */}
+
                   <div className="mb-3 overflow-hidden rounded-lg border border-border bg-background sm:mb-4 sm:rounded-xl">
                     <div className="relative aspect-[4/3] w-full sm:aspect-[16/10]">
                       <Image
@@ -352,7 +348,6 @@ export default function AccessoriesPage() {
                     </div>
                   </div>
 
-                  {/* Badge */}
                   <div className="mb-2 h-5 sm:h-6">
                     {accessory.badge ? (
                       <Badge variant="secondary" className="text-[10px] sm:text-xs">
@@ -363,7 +358,6 @@ export default function AccessoriesPage() {
                     )}
                   </div>
 
-                  {/* Icon + Title */}
                   <div className="mb-2 flex items-start gap-2 sm:mb-3 sm:gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground sm:h-10 sm:w-10 sm:rounded-lg">
                       <span className="h-4 w-4 [&>svg]:h-4 [&>svg]:w-4 sm:h-5 sm:w-5 sm:[&>svg]:h-5 sm:[&>svg]:w-5">{accessory.icon}</span>
@@ -376,12 +370,10 @@ export default function AccessoriesPage() {
                     </div>
                   </div>
 
-                  {/* Description */}
                   <p className="mt-1 line-clamp-2 text-xs text-muted-foreground flex-1 sm:mt-2 sm:line-clamp-3 sm:text-sm">
                     {accessory.description}
                   </p>
 
-                  {/* Link */}
                   <div className="mt-3 flex items-center text-xs font-medium text-foreground sm:mt-4 sm:text-sm">
                     Voir détails
                     <ChevronRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4" />
@@ -393,7 +385,6 @@ export default function AccessoriesPage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="border-b border-border/30 py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
@@ -427,7 +418,6 @@ export default function AccessoriesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="relative overflow-hidden rounded-xl border border-border bg-card px-4 py-10 text-center sm:rounded-2xl sm:px-6 sm:py-12 md:px-16 md:py-16">
@@ -453,8 +443,8 @@ export default function AccessoriesPage() {
                   size="default"
                   className={`${michroma.className} gap-2 bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 sm:size-lg`}
                 >
-                  <Link href="/contact">
-                    Obtenir une soumission
+                  <Link href="/demo">
+                    Demander une démo
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>

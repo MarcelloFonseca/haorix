@@ -69,7 +69,7 @@ export default function HVizProductPage() {
       specs={specs}
       highlights={highlights}
       ctaText="Demander une démo"
-      ctaLink="/contact"
+      ctaLink="/demo"
       secondaryCtaText="Voir comment ça marche"
       secondaryCtaLink="/#how-it-works"
     />
